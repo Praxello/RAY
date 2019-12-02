@@ -14,10 +14,9 @@ $('#signin').on('submit', function(event) {
         },
         success: function(response) {
             if (response.Data != null) {
-                console.log(response.Data);
-                // window.location.href = 'createSession.php?branchId=' + branchId + '&userId=' + userId + '&username=' + username + '&email=' + email + '&center=' + response.Data.center + '&designation=' + response.Data.designation;
+                window.location.href = 'createSession.php?userId=' + response.Data.userId;
             } else {
-                alert('Enter Correct Username and password');
+                $('.message').show();
             }
         },
         complete: function(response) {
