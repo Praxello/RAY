@@ -384,32 +384,32 @@
                                     
                                     <div class="card-body">
                                         <form class="forms-sample">
-                                        <div class="col-md-12">                                            
+                                                <div class="col-md-12">                                            
                                     
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                            <div class="form-group">
+                                                 <div class="row">
+                                                     <div class="col-md-4">
+                                                            <div class="form-group">
                                                 
-                                                <label for="exampleInputName1">First Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
-                                            </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                            <div class="form-group">
+                                                              <label for="exampleInputName1">First Name</label>
+                                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
                                                 
-                                                <label for="exampleInputName2">Middle Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName2" placeholder=" Middle Name">
-                                            </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                            <div class="form-group">
+                                                                <label for="exampleInputName2">Middle Name</label>
+                                                                <input type="text" class="form-control" id="exampleInputName2" placeholder=" Middle Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
                                                 
-                                                <label for="exampleInputName3">Last Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div>
+                                                                <label for="exampleInputName3">Last Name</label>
+                                                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Last Name">
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
                                            
                                             
 
