@@ -9,17 +9,17 @@
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
         
-        <link rel="stylesheet" href="../plugins/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-        <link rel="stylesheet" href="../plugins/ionicons/dist/css/ionicons.min.css">
-        <link rel="stylesheet" href="../plugins/icon-kit/dist/css/iconkit.min.css">
-        <link rel="stylesheet" href="../plugins/perfect-scrollbar/css/perfect-scrollbar.css">
-        <link rel="stylesheet" href="../dist/css/theme.min.css">
-        <script src="../src/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="plugins/ionicons/dist/css/ionicons.min.css">
+        <link rel="stylesheet" href="plugins/icon-kit/dist/css/iconkit.min.css">
+        <link rel="stylesheet" href="plugins/perfect-scrollbar/css/perfect-scrollbar.css">
+        <link rel="stylesheet" href="dist/css/theme.min.css">
+        <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
     <body>
@@ -59,7 +59,7 @@
                                         </a>
                                         <a href="#" class="media">
                                             <span class="d-flex">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </span>
                                             <span class="media-body">
                                                 <span class="heading-font-family media-heading">Steve Smith</span> 
@@ -119,7 +119,7 @@
                     <div class="sidebar-header">
                         <a class="header-brand" href="index.html">
                             <div class="logo-img">
-                               <img src="../src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> 
+                               <img src="src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> 
                             </div>
                             <span class="text">ThemeKit</span>
                         </a>
@@ -132,7 +132,7 @@
                             <nav id="main-menu-navigation" class="navigation-main">
                                 <div class="nav-lavel">Navigation</div>
                                 <div class="nav-item">
-                                    <a href="../index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                                    <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                                 </div>
                                 <div class="nav-item">
                                     <a href="navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
@@ -378,23 +378,58 @@
                         </div> -->
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6"> -->
                                 <div class="card">
                                     <div class="card-header"><h3>Basic form elements</h3></div>
+                                    
                                     <div class="card-body">
                                         <form class="forms-sample">
+                                        <div class="col-md-12">                                            
+                                    
+                                        <div class="row">
+                                            <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="exampleInputName1">Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                                                
+                                                <label for="exampleInputName1">First Name</label>
+                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
                                             </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                            <div class="form-group">
+                                                
+                                                <label for="exampleInputName2">Middle Name</label>
+                                                <input type="text" class="form-control" id="exampleInputName2" placeholder=" Middle Name">
+                                            </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                            <div class="form-group">
+                                                
+                                                <label for="exampleInputName3">Last Name</label>
+                                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                           
+                                            
+
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputMobileno">Mobile No</label>
+                                                        <input type="Mobileno" class="form-control" id="exampleInputMobileno" placeholder="Mobile no">
+                                                    </div>
+                                                </div>
+
+                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="exampleInputEmail3">Email address</label>
                                                         <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">
+
+
+                                                <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="exampleSelectGender">Gender</label>
                                                         <select class="form-control" id="exampleSelectGender">
@@ -404,11 +439,40 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+
+                                            
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                    <label for="exampleTextarea">Address</label>
+                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleSelectPincode">Pincode</label>
+                                                        <input type="pincode" class="form-control" id="exampleSelectPincode" placeholder="Pincode">
+                                                       
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleSelectLandline">Landline No.</label>
+                                                        <input type="Landline" class="form-control" id="exampleSelectLandline" placeholder="Landline">
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="form-group">
                                                 <label for="exampleInputPassword4">Password</label>
                                                 <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
                                             </div>
-                                            
+                                             -->
+                                            <!-- <div class="row">
+                                             <div class="col-md-4"> 
                                             <div class="form-group">
                                                 <label>File upload</label>
                                                 <input type="file" name="img[]" class="file-upload-default">
@@ -418,11 +482,15 @@
                                                     <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                                                     </span>
                                                 </div>
+                                                </div>
                                             </div>
+                                            <div class="col-md-8"> 
                                             <div class="form-group">
                                                 <label for="exampleTextarea1">Textarea</label>
                                                 <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                                                </div>
                                             </div>
+                                            </div> -->
                                             <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                             <button class="btn btn-light">Cancel</button>
                                         </form>
@@ -693,37 +761,37 @@
                             <div class="list-group row">
                                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Gene Newman">
                                     <figure class="user--online">
-                                        <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Gene Newman</span>  <span class="username">@gene_newman</span> </span>
                                 </a>
                                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Billy Black">
                                     <figure class="user--online">
-                                        <img src="../img/users/2.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/2.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Billy Black</span>  <span class="username">@billyblack</span> </span>
                                 </a>
                                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Herbert Diaz">
                                     <figure class="user--online">
-                                        <img src="../img/users/3.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/3.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Herbert Diaz</span>  <span class="username">@herbert</span> </span>
                                 </a>
                                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Sylvia Harvey">
                                     <figure class="user--busy">
-                                        <img src="../img/users/4.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/4.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Sylvia Harvey</span>  <span class="username">@sylvia</span> </span>
                                 </a>
                                 <a href="javascript:void(0)" class="list-group-item active" data-chat-user="Marsha Hoffman">
                                     <figure class="user--busy">
-                                        <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Marsha Hoffman</span>  <span class="username">@m_hoffman</span> </span>
                                 </a>
                                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Mason Grant">
                                     <figure class="user--offline">
-                                        <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Mason Grant</span>  <span class="username">@masongrant</span> </span>
                                 </a>
                                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Shelly Sullivan">
                                     <figure class="user--offline">
-                                        <img src="../img/users/2.jpg" class="rounded-circle" alt="">
+                                        <img src="img/users/2.jpg" class="rounded-circle" alt="">
                                     </figure><span><span class="name">Shelly Sullivan</span>  <span class="username">@shelly</span></span>
                                 </a>
                             </div>
@@ -744,7 +812,7 @@
                                     <div class="message media reply">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/3.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/3.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -754,7 +822,7 @@
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -764,7 +832,7 @@
                                     <div class="message media reply">
                                         <figure class="user--offline">
                                             <a href="#">
-                                                <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -775,7 +843,7 @@
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -785,7 +853,7 @@
                                     <div class="message media reply">
                                         <figure class="user--busy">
                                             <a href="#">
-                                                <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -795,7 +863,7 @@
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -813,12 +881,12 @@
                         </form>
                     </div>
                 </div>
-                <footer class="footer">
+                <!-- <footer class="footer">
                     <div class="w-100 clearfix">
                         <span class="text-center text-sm-left d-md-inline-block">Copyright © 2018 ThemeKit v2.0. All Rights Reserved.</span>
                         <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite</a></span>
                     </div>
-                </footer>
+                </footer> -->
             </div>
         </div>
         
@@ -904,11 +972,11 @@
         
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="../src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-        <script src="../plugins/popper.js/dist/umd/popper.min.js"></script>
-        <script src="../plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-        <script src="../dist/js/theme.min.js"></script>
-        <script src="../js/form-components.js"></script>
+        <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
+        <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        <script src="dist/js/theme.min.js"></script>
+        <script src="js/form-components.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
