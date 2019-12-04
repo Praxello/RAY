@@ -13,7 +13,7 @@ $('#signin').on('submit', function(event) {
             $("#wait").css("display", "block");
         },
         success: function(response) {
-            if (response.Data != null) {
+            if (response.Responsecode == 200) {
                 window.location.href = 'createSession.php?userId=' + response.Data.userId;
             } else {
                 $('.message').show();

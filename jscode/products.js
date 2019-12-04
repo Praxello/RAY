@@ -1,5 +1,5 @@
 const data = {
-    userId: 1
+    userId: $('#userId').val()
 };
 var productList = new Map();
 var vendorsList = new Map();
@@ -10,6 +10,7 @@ const loadProducts = () => {
         url: url + 'getProducts.php',
         type: 'POST',
         dataType: 'json',
+        data: data,
         success: function(response) {
             if (response.Data != null) {
                 const count = response.Data.length;
@@ -68,7 +69,6 @@ const loadVendors = () => {
 }
 loadVendors(); //for dropdown list
 const editProduct = productId => {
-    console.log(productId);
     productId = productId.toString();
     if (productList.has(productId)) {
         $('.productlist').hide();

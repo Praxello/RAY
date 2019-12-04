@@ -6,7 +6,11 @@ mysqli_set_charset($conn, 'utf8');
 $response = null;
 $records  = null;
 extract($_POST);
-$sql      = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2";
+if(isset($_POST['userId'])){
+    $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2 AND um.userId = $userId";
+}else{
+    $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2";
+}
 $jobQuery = mysqli_query($conn, $sql);
 if ($jobQuery != null) {
     $academicAffected = mysqli_num_rows($jobQuery);

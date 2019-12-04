@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['userId'])){
+    $userId = $_SESSION['userId']; ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -29,7 +33,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        <input type="hidden" id="userId" value="<?php echo $userId;?>"/>
         <div class="wrapper">
             <?php include 'navbar.php';?>
 
@@ -224,3 +228,8 @@
     </body>
 
 </html>
+<?php 
+}else{
+    header('Location:login.html');
+}
+?>
