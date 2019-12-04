@@ -2,13 +2,15 @@ const data = {
     userId: 1
 };
 var productList = new Map();
+var vendorsList = new Map();
+var uproductId = null; //for updation
+var details = {};
 const loadProducts = () => {
     $.ajax({
         url: url + 'getProducts.php',
         type: 'POST',
         dataType: 'json',
         success: function(response) {
-            console.log(response);
             if (response.Data != null) {
                 const count = response.Data.length;
                 for (var i = 0; i < count; i++) {
@@ -49,15 +51,35 @@ const showProducts = productList => {
 }
 loadProducts();
 
+const loadVendors = () => {
+    $.ajax({
+        url: url + 'getAllVendors.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+            if (response.Data != null) {
+                const count = response.Data.length;
+                for (var i = 0; i < count; i++) {
+                    vendorsList.set(response.Data[i].userId, response.Data[i]);
+                }
+            }
+        }
+    });
+}
+loadVendors(); //for dropdown list
 const editProduct = productId => {
     console.log(productId);
     productId = productId.toString();
     if (productList.has(productId)) {
-
+        $('.productlist').hide();
+        $('#newproduct').load('edit_product.php');
+        const product = productList.get(productId);
+        uproductId = productId;
+        details = product;
     }
 }
 
-const removeVendor = productId => {
+const removeProduct = productId => {
     productId = productId.toString();
     if (productList.has(productId)) {
 
@@ -65,7 +87,7 @@ const removeVendor = productId => {
     }
 }
 
-function addVendor() {
+function addProduct() {
     $('.productlist').hide();
     $('#newproduct').load('add_product.php');
 }

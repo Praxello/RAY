@@ -85,7 +85,7 @@
     </div>
 </div>
 <script>
-    loadDetails(details);
+   
     function loadDetails(vendor){
         $('#fname').val(vendor.fname);
         $('#mname').val(vendor.mname);
@@ -97,6 +97,7 @@
         $('#pincode').val(vendor.pincode);
         $('#landline').val(vendor.landline);
     }
+    loadDetails(details);
 $('#vendorForm').on('submit', function(e) {
     e.preventDefault();
     const vendorDetails = {
