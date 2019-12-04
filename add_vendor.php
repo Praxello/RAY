@@ -110,6 +110,8 @@ $('#vendorForm').on('submit', function(e) {
                 vendorsList.set(response.Data.userId, response.Data);
                 showVendors(vendorsList);
                 goback();
+            }else{
+                alert(response.Message);
             }
         }
     });
