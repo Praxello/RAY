@@ -378,9 +378,46 @@
                         </div> -->
 
                         <div class="row">
+<<<<<<< HEAD
     <div class="card">
         <div class="card-header">
             <h3>Add Vendor Details</h3></div>
+=======
+                            <!-- <div class="col-md-6"> -->
+                                <div class="card">
+                                    <div class="card-header"><h3>Basic form elements</h3></div>
+                                    
+                                    <div class="card-body">
+                                        <form class="forms-sample">
+                                                <div class="col-md-12">                                            
+                                    
+                                                 <div class="row">
+                                                     <div class="col-md-4">
+                                                            <div class="form-group">
+                                                
+                                                              <label for="exampleInputName1">First Name</label>
+                                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                
+                                                                <label for="exampleInputName2">Middle Name</label>
+                                                                <input type="text" class="form-control" id="exampleInputName2" placeholder=" Middle Name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                
+                                                                <label for="exampleInputName3">Last Name</label>
+                                                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Last Name">
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                           
+                                            
+>>>>>>> 10e50256e99046ac72839021b2ad3cbecb33840b
 
         <div class="card-body">
             <form class="forms-sample">
