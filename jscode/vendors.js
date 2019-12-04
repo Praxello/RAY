@@ -1,6 +1,8 @@
 const data = {
     userId: 1
 };
+var userId = null; //for updation
+var details = {};
 var vendorsList = new Map();
 const loadVendors = () => {
     $.ajax({
@@ -20,6 +22,8 @@ const loadVendors = () => {
 }
 
 const showVendors = vendorsList => {
+    $('.vendors').dataTable().fnDestroy();
+    $('.vendorData').empty();
     var tblData = '';
     for (let k of vendorsList.keys()) {
         let vendors = vendorsList.get(k);
@@ -49,17 +53,32 @@ const showVendors = vendorsList => {
 loadVendors();
 
 const editVendor = vendorId => {
-    console.log(vendorId);
     vendorId = vendorId.toString();
     if (vendorsList.has(vendorId)) {
-
+        $('.vendorlist').hide();
+        $('#newvendor').load('edit_vendor.php');
+        const vendor = vendorsList.get(vendorId);
+        userId = vendorId;
+        details = vendor;
+    } else {
+        alert('something goes wrong');
     }
 }
 
 const removeVendor = vendorId => {
     vendorId = vendorId.toString();
     if (vendorsList.has(vendorId)) {
-
-
+        $('.vendorlist').hide();
+        $('#newvendor').load('add_vendor.php');
     }
+}
+
+function addVendor() {
+    $('.vendorlist').hide();
+    $('#newvendor').load('add_vendor.php');
+}
+
+function goback() {
+    $('#newvendor').empty();
+    $('.vendorlist').show();
 }

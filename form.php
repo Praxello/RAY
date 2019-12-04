@@ -378,307 +378,95 @@
                         </div> -->
 
                         <div class="row">
-                            <!-- <div class="col-md-6"> -->
-                                <div class="card">
-                                    <div class="card-header"><h3>Basic form elements</h3></div>
-                                    
-                                    <div class="card-body">
-                                        <form class="forms-sample">
-                                        <div class="col-md-12">                                            
-                                    
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                            <div class="form-group">
-                                                
-                                                <label for="exampleInputName1">First Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
-                                            </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                            <div class="form-group">
-                                                
-                                                <label for="exampleInputName2">Middle Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName2" placeholder=" Middle Name">
-                                            </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                            <div class="form-group">
-                                                
-                                                <label for="exampleInputName3">Last Name</label>
-                                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Last Name">
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div>
-                                           
-                                            
+    <div class="card">
+        <div class="card-header">
+            <h3>Add Vendor Details</h3></div>
 
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label for="exampleInputMobileno">Mobile No</label>
-                                                        <input type="Mobileno" class="form-control" id="exampleInputMobileno" placeholder="Mobile no">
-                                                    </div>
-                                                </div>
+        <div class="card-body">
+            <form class="forms-sample">
+                
 
-                                                 <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label for="exampleInputEmail3">Email address</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                                                    </div>
-                                                </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
 
-
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <label for="exampleSelectGender">Gender</label>
-                                                        <select class="form-control" id="exampleSelectGender">
-                                                            <option>Male</option>
-                                                            <option>Female</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            
-                                            
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                    <label for="exampleTextarea">Address</label>
-                                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="exampleSelectPincode">Pincode</label>
-                                                        <input type="pincode" class="form-control" id="exampleSelectPincode" placeholder="Pincode">
-                                                       
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label for="exampleSelectLandline">Landline No.</label>
-                                                        <input type="Landline" class="form-control" id="exampleSelectLandline" placeholder="Landline">
-                                                       
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- <div class="form-group">
-                                                <label for="exampleInputPassword4">Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                                            </div>
-                                             -->
-                                            <!-- <div class="row">
-                                             <div class="col-md-4"> 
-                                            <div class="form-group">
-                                                <label>File upload</label>
-                                                <input type="file" name="img[]" class="file-upload-default">
-                                                <div class="input-group col-xs-12">
-                                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                                                    <span class="input-group-append">
-                                                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                                    </span>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8"> 
-                                            <div class="form-group">
-                                                <label for="exampleTextarea1">Textarea</label>
-                                                <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
-                                                </div>
-                                            </div>
-                                            </div> -->
-                                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                            <button class="btn btn-light">Cancel</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header"><h3>Input Sizes</h3></div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group row">
-                                                <div class="col-sm-12">
-                                                    <input type="text" class="form-control form-control-lg" placeholder=".form-control-lg">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" placeholder=".form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control form-control-sm" placeholder=".form-control-sm">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header"><h3>Text-color</h3></div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-txt-primary" placeholder=".form-txt-primary">
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-txt-warning" placeholder=".form-txt-warning">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-txt-default" placeholder=".form-txt-default">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-txt-danger" placeholder=".form-txt-danger">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-txt-success" placeholder=".form-txt-success">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-txt-inverse" placeholder=".form-txt-inverse">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-txt-info" placeholder=".form-txt-info">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header"><h3>Color Inputs</h3></div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-primary" placeholder=".form-control-primary">
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-warning" placeholder=".form-control-warning">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-default" placeholder=".form-control-default">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-danger" placeholder=".form-control-danger">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-success" placeholder=".form-control-success">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-inverse" placeholder=".form-control-inverse">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-control-info" placeholder=".form-control-info">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header"><h3>Background-color</h3></div>
-                                    <div class="card-body">
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-bg-primary" placeholder=".form-bg-primary">
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-bg-warning" placeholder=".form-bg-warning">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-bg-default" placeholder=".form-bg-default">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-bg-danger" placeholder=".form-bg-danger">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-bg-success" placeholder=".form-bg-success">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-bg-inverse" placeholder=".form-bg-inverse">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <input type="text" class="form-control form-bg-info" placeholder=".form-bg-info">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="card" style="min-height: 180px;">
-                                    <div class="card-header"><h3>Inline forms</h3></div>
-                                    <div class="card-body">
-                                        <form class="form-inline">
-                                            <label class="sr-only" for="inlineFormInputName2">Name</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Shanker Raj">
-                                          
-                                            <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                            <div class="input-group mb-2 mr-sm-2">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">@</div>
-                                                </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
-                                            </div>
-                                            <div class="form-check mx-sm-2">
-                                                <label class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" checked>
-                                                    <span class="custom-control-label">&nbsp; Remember Me</span>
-                                                </label>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="card">
-                                    <div class="card-header"><h3>Validation States</h3></div>
-                                    <div class="card-body">
-                                        <form class="forms-sample">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="exampleInputName1">Name</label>
-                                                        <input type="text" class="form-control is-valid" id="exampleInputName1" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label for="exampleInputEmail3">Email address</label>
-                                                        <input type="email" class="form-control is-invalid" id="exampleInputEmail3" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                                <label for="exampleInputName1">First Name</label>
+                                <input type="text" class="form-control" id="exampleInputName1" placeholder="First Name">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+
+                                <label for="exampleInputName2">Middle Name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder=" Middle Name">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+
+                                <label for="exampleInputName3">Last Name</label>
+                                <input type="text" class="form-control" id="exampleInputName3" placeholder="Last Name">
+                            </div>
+                        </div>
+                    </div>
+               
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="exampleInputMobileno">Mobile No</label>
+                            <input type="Mobileno" class="form-control" id="exampleInputMobileno" placeholder="Mobile no">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="exampleSelectGender">Gender</label>
+                            <select class="form-control" id="exampleSelectGender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleTextarea">Address</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="exampleSelectPincode">Pincode</label>
+                            <input type="pincode" class="form-control" id="exampleSelectPincode" placeholder="Pincode">
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="exampleSelectLandline">Landline No.</label>
+                            <input type="Landline" class="form-control" id="exampleSelectLandline" placeholder="Landline">
+
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
 
                         <div class="row">
                             <div class="col-md-12">

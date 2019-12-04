@@ -7,7 +7,7 @@ $response = null;
 $records  = null;
 extract($_POST);
 $roleId = 2;
-if (isset($_POST['userId']) && isset($_POST['contactNumber']) && isset($_POST['emailId']) && isset($_POST['upassword']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['contactAddress'])) {
+if (isset($_POST['userId']) && isset($_POST['contactNumber']) && isset($_POST['emailId']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['contactAddress'])) {
     
     $mname     = isset($_POST['mname']) ? $_POST['mname'] : 'NULL';
     $pincode   = isset($_POST['pincode']) ? $_POST['pincode'] : 'NULL';
@@ -42,7 +42,7 @@ if (isset($_POST['userId']) && isset($_POST['contactNumber']) && isset($_POST['e
         
     } else {
         $response = array(
-            'Message' => mysqli_error($conn) . " failed",
+            'Message' => mysqli_error($conn) . "No Data Change",
             'Responsecode' => 500
         );
     }

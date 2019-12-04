@@ -24,18 +24,18 @@ const showProducts = productList => {
     var tblData = '';
     for (let k of productList.keys()) {
         let products = productList.get(k);
-        tblData += '<tr><td>' + products.contactNumber + '</td>';
+        tblData += '<tr><td>' + products.productTitle + '</td>';
         tblData += '<td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
-        tblData += '<td>' + vendors.fname + ' ' + vendors.lname + '</td>';
-        tblData += '<td>' + vendors.emailId + '</td>';
-        tblData += '<td>' + vendors.birthDate + '</td>';
-        tblData += '<td>' + vendors.contactAddress + '</td>';
+        tblData += '<td>' + products.price + '</td>';
+        tblData += '<td>' + products.GST + '</td>';
+        tblData += '<td>' + products.videoUrl + '</td>';
+        tblData += '<td>' + products.details + '</td>';
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editProduct(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
         tblData += '<a href="#" class="list-delete" onclick="removeProduct(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
         tblData += '</div></td></tr>';
     }
-    $('.productData').html(tblData);
+    $('.productsData').html(tblData);
     $('.products').dataTable({
         searching: true,
         retrieve: true,
@@ -63,4 +63,14 @@ const removeVendor = productId => {
 
 
     }
+}
+
+function addVendor() {
+    $('.productlist').hide();
+    $('#newproduct').load('add_product.php');
+}
+
+function goback() {
+    $('#newproduct').empty();
+    $('.productlist').show();
 }
