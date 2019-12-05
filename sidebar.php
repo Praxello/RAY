@@ -24,6 +24,9 @@
                                 <div class="nav-item">
                                     <a href="products.php"><i class="ik ik-menu"></i><span>Products</span> <span class="badge badge-success">New</span></a>
                                 </div>
+                                <div class="nav-item">
+                                    <a href="quiz.php"><i class="ik ik-menu"></i><span>Quiz</span> <span class="badge badge-success">New</span></a>
+                                </div>
                                 <!-- <div class="nav-item has-sub">
                                     <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Widget</span> <span class="badge badge-danger">150+</span></a>
                                     <div class="submenu-content">

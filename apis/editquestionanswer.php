@@ -15,8 +15,8 @@ if (isset($_POST['questionId']) && isset($_POST['userId']) && isset($_POST['cate
     $question = mysqli_real_escape_string($conn, $question);
     $option1 = mysqli_real_escape_string($conn, $option1);
     $option2 = mysqli_real_escape_string($conn, $option2);
-    $option3 = mysqli_real_escape_string($conn, $question3);
-    $option4 = mysqli_real_escape_string($conn, $question4);
+    $option3 = mysqli_real_escape_string($conn, $option3);
+    $option4 = mysqli_real_escape_string($conn, $option4);
     $ansdes = mysqli_real_escape_string($conn, $ansdes);
 
     $sql   = "UPDATE QuestionAnswerMaster SET categoryId='$categoryId',question='$categoryId',option1='$option1',

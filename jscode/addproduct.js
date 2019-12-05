@@ -1,17 +1,9 @@
+vendorList(vendorsList);
 var loadFile = function(event) {
     var output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
 };
 
-function vendorList(vendorsList) {
-    dropdownList = '';
-    for (let k of vendorsList.keys()) {
-        let vendors = vendorsList.get(k);
-        dropdownList += '<option value=' + (k) + '>' + vendors.fname + ' ' + vendors.lname + '</option>';
-    }
-    $('#vendorId').html(dropdownList);
-}
-vendorList(vendorsList);
 $('#productform').on('submit', function(e) {
     e.preventDefault();
     const productDetails = {

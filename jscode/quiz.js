@@ -1,7 +1,7 @@
 const data = {
     userId: 1
 };
-var userId = null; //for updation
+var questionId = null; //for updation
 var details = {};
 var questionList = new Map();
 const loadVendors = () => {
@@ -22,8 +22,7 @@ const loadVendors = () => {
 }
 
 const showquestion = questionList => {
-    console.log(questionList);
-    $('.vendors').dataTable().fnDestroy();
+    $('#quiz').dataTable().fnDestroy();
     $('.vendorData').empty();
     var tblData = '';
     for (let k of questionList.keys()) {
@@ -42,12 +41,12 @@ const showquestion = questionList => {
         tblData += '</div></td></tr>';
     }
     $('.vendorData').html(tblData);
-    $('.vendors').dataTable({
+    $('#quiz').dataTable({
         searching: true,
         retrieve: true,
         bPaginate: $('tbody tr').length > 10,
         order: [],
-        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6,7] }],
+        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6, 7] }],
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf'],
         destroy: true
@@ -59,9 +58,9 @@ const editquestion = vendorId => {
     vendorId = vendorId.toString();
     if (questionList.has(vendorId)) {
         $('.questionlist').hide();
-        $('#newquestion').load('edit_vendor.php');
+        $('#newquestion').load('edit_question.php');
         const vendor = questionList.get(vendorId);
-        userId = vendorId;
+        questionId = vendorId;
         details = vendor;
     } else {
         alert('something goes wrong');
