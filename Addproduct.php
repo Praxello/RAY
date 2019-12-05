@@ -778,7 +778,7 @@
                                         </div>
                                     </div>
                                     <div class="message media">
-                                        <figure class="user--online">
+                           .             <figure class="user--online">
                                             <a href="#">
                                                 <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
