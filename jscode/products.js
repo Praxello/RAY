@@ -25,6 +25,8 @@ const loadProducts = () => {
 }
 
 const showProducts = productList => {
+    $('#products').dataTable().fnDestroy();
+    $('.productsData').empty();
     var tblData = '';
     for (let k of productList.keys()) {
         let products = productList.get(k);
@@ -40,7 +42,7 @@ const showProducts = productList => {
         tblData += '</div></td></tr>';
     }
     $('.productsData').html(tblData);
-    $('.products').dataTable({
+    $('#products').dataTable({
         searching: true,
         retrieve: true,
         bPaginate: $('tbody tr').length > 10,

@@ -89,7 +89,7 @@ if(isset($_SESSION['userId'])){
                                    
                                     </div>
                                     <div class="card-body">
-                                        <table id="data_table" class="table products">
+                                        <table id="products" class="table">
                                             <thead>
                                                 <tr>
                                                 <th class="nosort">Banner</th>
