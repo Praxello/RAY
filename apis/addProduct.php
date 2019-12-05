@@ -11,7 +11,7 @@ if (isset($_POST['userId']) && isset($_POST['productTitle']) && isset($_POST['pr
     $details = isset($_POST['details']) ? $_POST['details'] : 'NULL';
     
     $details = mysqli_real_escape_string($conn, $details);
-    
+   
     
     $sql   = "INSERT INTO  ProductMaster(userId,productTitle,price,GST,category,videoUrl,details) VALUES($userId,'$productTitle','$price','$GST','$category','$videoUrl','$details')";
     $query = mysqli_query($conn, $sql);
@@ -19,6 +19,12 @@ if (isset($_POST['userId']) && isset($_POST['productTitle']) && isset($_POST['pr
     $rowsAffected = mysqli_affected_rows($conn);
     if ($rowsAffected == 1) {
         $productId     = $conn->insert_id;
+        if(isset($_FILES["imgname"]["type"])){
+            $imgname = $_FILES["imgname"]["name"];
+            $sourcePath = $_FILES['imgname']['tmp_name']; // Storing source path of the file in a variable
+            $targetPath = "upload/".$productId; // Target path where file is to be stored
+            move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
+          }
         $academicQuery = mysqli_query($conn, "SELECT * FROM ProductMaster where productId = $productId");
         if ($academicQuery != null) {
             $academicAffected = mysqli_num_rows($academicQuery);

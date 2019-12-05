@@ -127,7 +127,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="message media reply">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/3.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/3.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -137,7 +137,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -147,7 +147,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="message media reply">
                                         <figure class="user--offline">
                                             <a href="#">
-                                                <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -158,7 +158,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -168,7 +168,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="message media reply">
                                         <figure class="user--busy">
                                             <a href="#">
-                                                <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -178,7 +178,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
