@@ -870,7 +870,7 @@
                     <div class="modal-body d-flex align-items-center">
                         <div class="container">
                             <div class="apps-wrap">
-                                <div class="app-item">
+                                <div class="app-item">  
                                     <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                                 </div>
                                 <div class="app-item">
