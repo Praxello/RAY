@@ -19,7 +19,7 @@ $(function() {
                 required: "Please enter a valid product name", minlength: "Enter a valid product", maxlength: "Length Exceed 50 characters"
             }
             , category: {
-                required: "it should be number", number: "Please enter a category in numbers"
+                required: "Please enter a category in numbers", number: "It should be number"
             }
             , price: {
                 required: "Please enter price", number: "enter valid price"
