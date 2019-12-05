@@ -6,10 +6,12 @@ mysqli_set_charset($conn, 'utf8');
 $response = null;
 $records  = null;
 extract($_POST);
-if(isset($_POST['userId'])){
-    $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2 AND um.userId = $userId";
-}else{
-    $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2";
+if(isset($_POST['userId']) && isset($_POST['roleId'])){
+    if($roleId == 1){
+        $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId";
+    }else{
+        $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2 AND um.userId = $userId";
+    }  
 }
 $jobQuery = mysqli_query($conn, $sql);
 if ($jobQuery != null) {
@@ -31,6 +33,12 @@ if ($jobQuery != null) {
             'Responsecode' => 401
         );
     }
+}else{
+    $response = array(
+        'Message' => "Please Logout and login again",
+        "Data" => $records,
+        'Responsecode' => 300
+    ); 
 }
 mysqli_close($conn);
 exit(json_encode($response));

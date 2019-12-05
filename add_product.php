@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="gst">GST No.</label>
+                            <label for="gst">HSN No</label>
                             <input type="text" class="form-control" id="gst" placeholder="GST no">
                         </div>
                     </div>

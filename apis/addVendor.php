@@ -40,6 +40,7 @@ if (isset($_POST['contactNumber']) && isset($_POST['emailId'])  && isset($_POST[
             $response = array(
                 'Message' => "Vendor added Successfully",
                 "Data" => $records,
+                'sql'=> $sql,
                 'Responsecode' => 200
             );
             

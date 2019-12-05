@@ -1,5 +1,6 @@
 const data = {
-    userId: $('#userId').val()
+    userId: $('#userId').val(),
+    roleId: $('#roleId').val()
 };
 var userId = null; //for updation
 var details = {};
@@ -23,13 +24,12 @@ const loadVendors = () => {
 }
 
 const showVendors = vendorsList => {
-    $('.vendors').dataTable().fnDestroy();
+    $('#vendors').dataTable().fnDestroy();
     $('.vendorData').empty();
     var tblData = '';
     for (let k of vendorsList.keys()) {
         let vendors = vendorsList.get(k);
         tblData += '<tr><td>' + vendors.contactNumber + '</td>';
-        tblData += '<td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
         tblData += '<td>' + vendors.fname + ' ' + vendors.lname + '</td>';
         tblData += '<td>' + vendors.emailId + '</td>';
         tblData += '<td>' + vendors.birthDate + '</td>';
@@ -40,12 +40,13 @@ const showVendors = vendorsList => {
         tblData += '</div></td></tr>';
     }
     $('.vendorData').html(tblData);
-    $('.vendors').dataTable({
+    $('#vendors').dataTable({
         searching: true,
         retrieve: true,
+        paging: true,
         bPaginate: $('tbody tr').length > 10,
         order: [],
-        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6] }],
+        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5] }],
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf'],
         destroy: true

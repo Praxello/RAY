@@ -1,5 +1,6 @@
 const data = {
-    userId: $('#userId').val()
+    userId: $('#userId').val(),
+    roleId: $('#roleId').val()
 };
 var productList = new Map();
 var vendorsList = new Map();
@@ -27,11 +28,11 @@ const showProducts = productList => {
     var tblData = '';
     for (let k of productList.keys()) {
         let products = productList.get(k);
-        tblData += '<tr><td>' + products.productTitle + '</td>';
-        tblData += '<td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
+        tblData += '<tr><td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
+        tblData += '<td>' + products.productTitle + '</td>';
         tblData += '<td>' + products.price + '</td>';
         tblData += '<td>' + products.GST + '</td>';
-        tblData += '<td>' + products.videoUrl + '</td>';
+        tblData += '<td><a href="' + products.videoUrl + '" target="_blank">' + products.videoUrl + '</a></td>';
         tblData += '<td>' + products.details + '</td>';
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editProduct(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
@@ -57,6 +58,7 @@ const loadVendors = () => {
         url: url + 'getAllVendors.php',
         type: 'POST',
         dataType: 'json',
+        data: data,
         success: function(response) {
             if (response.Data != null) {
                 const count = response.Data.length;
