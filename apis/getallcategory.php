@@ -7,9 +7,9 @@ $response = null;
 $records  = null;
 extract($_POST);
 if(isset($_POST['userId'])){
-    $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2 AND um.userId = $userId";
+    $sql      = "SELECT * FROM categorymaster";
 }else{
-    $sql  = "SELECT * FROM UserMaster um INNER JOIN UserDetails ud ON um.userId = ud.userId WHERE um.roleId = 2";
+    $sql = "SELECT * FROM categorymaster ";
 }
 $jobQuery = mysqli_query($conn, $sql);
 if ($jobQuery != null) {
@@ -18,15 +18,15 @@ if ($jobQuery != null) {
         while ($academicResults = mysqli_fetch_assoc($jobQuery)) {
             $records[] = $academicResults;
         }
-        
+
         $response = array(
-            'Message' => "All vendors Data Fetched successfully",
+            'Message' => " Data Fetched successfully",
             "Data" => $records,
             'Responsecode' => 200
         );
     } else {
         $response = array(
-            'Message' => "No user present/ Invalid username or password",
+            'Message' => "No Data Available",
             "Data" => $records,
             'Responsecode' => 401
         );
@@ -34,4 +34,4 @@ if ($jobQuery != null) {
 }
 mysqli_close($conn);
 exit(json_encode($response));
-?> 
+?>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['userId'])){
+    $userId = $_SESSION['userId']; ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -29,10 +33,9 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        <input type="hidden" id="userId" value="<?php echo $userId;?>"/>
         <div class="wrapper">
             <?php include 'navbar.php';?>
-
             <div class="page-wrap">
                 <?php include 'sidebar.php';?>
                 <div class="main-content">
@@ -63,16 +66,28 @@
                                 </div>
                             </div>
                         </div>
-            <div id="newvendor"></div>
-
+                        <div id="newvendor"></div>
                         <div class="row vendorlist">
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3>Vendor List</h3>
-                                        <button type="button" class="btn btn-primary" style="float: right;" onclick="addVendor();" >New Vendor</button>
+                                      <div class="col-md-12">
+                                        <div class="row">
+                                          <div class="col-sm-4">
+                                            <h3>Vendor List</h3>
+                                          </div>
+                                          <div class="col-sm-4">
+
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <button type="button" class="btn btn-primary" style="float: right;" onclick="addVendor();" >New Vendor</button>
+                                          </div>
+                                        </div>
+                                        </div>
+                                      
+
                                     </div>
-                                
+
                                     <div class="card-body">
                                         <table id="data_table" class="table vendors">
                                             <thead>
@@ -87,11 +102,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="vendorData">
-                                                
-                                               
-                                               
-                                                
-                                            
                                             </tbody>
                                         </table>
                                     </div>
@@ -112,87 +122,12 @@
 
 
 
-                <div class="modal fade apps-modal" id="appsModal" tabindex="-1" role="dialog" aria-labelledby="appsModalLabel" aria-hidden="true" data-backdrop="false">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ik ik-x-circle"></i></button>
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="quick-search">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-4 ml-auto mr-auto">
-                                            <div class="input-wrap">
-                                                <input type="text" id="quick-search" class="form-control" placeholder="Search..." />
-                                                <i class="ik ik-search"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-body d-flex align-items-center">
-                                <div class="container">
-                                    <div class="apps-wrap">
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-mail"></i><span>Message</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-users"></i><span>Accounts</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-shopping-cart"></i><span>Sales</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-briefcase"></i><span>Purchase</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-server"></i><span>Menus</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-clipboard"></i><span>Pages</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-message-square"></i><span>Chats</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-map-pin"></i><span>Contacts</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-box"></i><span>Blocks</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-calendar"></i><span>Events</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-bell"></i><span>Notifications</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-pie-chart"></i><span>Reports</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-layers"></i><span>Tasks</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-edit"></i><span>Blogs</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-settings"></i><span>Settings</span></a>
-                                        </div>
-                                        <div class="app-item">
-                                            <a href="#"><i class="ik ik-more-horizontal"></i><span>More</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <?php include "dashboardmodal.php"; ?>
 
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                <script>
+                <!-- <script>
                     window.jQuery || document.write('<script src="src/js/vendor/jquery-3.3.1.min.js"><\/script>')
-                </script>
+                </script> -->
                 <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
                 <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
                 <script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
@@ -201,13 +136,13 @@
                 <script src="plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
                 <script src="dist/js/theme.min.js"></script>
                 <script src="js/datatables.js"></script>
-               
+
                 <script src="plugins/moment/moment.js"></script>
-        <script src="plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
-        <script src="plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
-        <script src="plugins/datedropper/datedropper.min.js"></script>
-        <script src="dist/js/theme.min.js"></script>
-        <script src="js/form-picker.js"></script>
+                <script src="plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
+                <script src="plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
+                <script src="plugins/datedropper/datedropper.min.js"></script>
+                <script src="dist/js/theme.min.js"></script>
+                <script src="js/form-picker.js"></script>
 
                 <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
                 <script src="plugins/summernote/dist/summernote-bs4.min.js"></script>
@@ -215,12 +150,11 @@
                 <script src="jscode/apis.js"></script>
                 <script src="jscode/vendors.js"></script>
 
-
-             
-       
-       
-       
-
     </body>
 
 </html>
+<?php 
+}else{
+    header('Location:login.html');
+}
+?>

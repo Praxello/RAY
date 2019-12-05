@@ -1,5 +1,4 @@
 <div class="row">
-
     <div class="card">
         <div class="card-header">
             <h3>Update Product Details</h3></div>
@@ -9,7 +8,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="productTitle">Product Title</label>
-                            <input type="text" id="productTitle" class="form-control"  placeholder="Product Title">
+                            <input type="text" id="productTitle" class="form-control" placeholder="Product Title">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -22,7 +21,7 @@
                         <div class="form-group">
                             <label for="vendorId">Vendor</label>
                             <select class="form-control" id="vendorId">
-                              
+
                             </select>
                         </div>
                     </div>
@@ -63,47 +62,73 @@
     </div>
 </div>
 <div class="row">
-<div class="card">
+    <div class="card">
         <div class="card-header">
             <h3>Add upto 3 product images</h3></div>
         <div class="card-body">
-            <form action="upload.php" class="dropzone" id="myAwesomeDropzone"> 
-            </form>  
-            </div>
+            <form action="apis/upload.php" class="dropzone" id="myAwesomeDropzone">
+                <input type="hidden" id="productId" name="productId" />
+            </form>
+        </div>
+    </div>
 </div>
-          </div>
-        
 <script>
-        Dropzone.autoDiscover = false;
-        $(".dropzone").dropzone({
-            addRemoveLinks: true,
-            removedfile: function(file) {
-                var name = file.name;
+    Dropzone.autoDiscover = false;
+    $(".dropzone").dropzone({
+        init: function() {
+            thisDropzone = this;
+            var link = url + 'getImages.php';
+            $.get('apis/getImages.php', {
+                productId: uproductId
+            }, function(response) {
+                $.each(response.Data, function(key, value) {
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'upload.php',
-                    data: {name: name,request: 2},
-                    sucess: function(data){
-                        console.log('success: ' + data);
-                    }
+                    var mockFile = {
+                        name: value.name,
+                        size: value.size
+                    };
+
+                    thisDropzone.options.addedfile.call(thisDropzone, mockFile);
+
+                    thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "apis/upload/" + value.name);
+
                 });
-                var _ref;
-                return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
-            }
-        });
-       
-function vendorList(vendorsList) {
-    dropdownList = '';
-    for (let k of vendorsList.keys()) {
-        let vendors = vendorsList.get(k);
-        dropdownList += '<option value=' + (k) + '>' + vendors.fname + ' ' + vendors.lname + '</option>';
+
+            });
+        },
+        addRemoveLinks: true,
+        removedfile: function(file) {
+            var name = file.name;
+            $.ajax({
+                type: 'POST',
+                url: url + 'upload.php',
+                data: {
+                    name: name,
+                    request: 2,
+                    productId: uproductId
+                },
+                sucess: function(data) {
+                    console.log('success: ' + data);
+                }
+            });
+            var _ref;
+            return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
+        }
+    });
+
+    function vendorList(vendorsList) {
+        dropdownList = '';
+        for (let k of vendorsList.keys()) {
+            let vendors = vendorsList.get(k);
+            dropdownList += '<option value=' + (k) + '>' + vendors.fname + ' ' + vendors.lname + '</option>';
+        }
+        $('#vendorId').html(dropdownList);
     }
-    $('#vendorId').html(dropdownList);
-}
-vendorList(vendorsList);
-function loadDetails(product){
-    $('#productTitle').val(product.productTitle);
+    vendorList(vendorsList);
+
+    function loadDetails(product) {
+        $('#productId').val(product.productId);
+        $('#productTitle').val(product.productTitle);
         $('#productCategory').val(product.category);
         $('#vendorId').val(product.userId).trigger('change');
         $('#price').val(product.price);
@@ -113,33 +138,33 @@ function loadDetails(product){
     }
     loadDetails(details);
 
-$('#productform').on('submit', function(e) {
-    e.preventDefault();
-    const productDetails = {
-        productId:uproductId,
-        productTitle: $('#productTitle').val(),
-        category: $('#productCategory').val(),
-        userId: $('#vendorId').val(),
-        price: $('#price').val(),
-        GST: $('#gst').val(),
-        videoUrl: $('#videoLink').val(),
-        details: $('#productDesc').val()
-    };
-    $.ajax({
-        url: url + 'editProduct.php',
-        type: 'POST',
-        data: productDetails,
-        dataType: 'json',
-        success: function(response) {
-            if (response.Responsecode == 200) {
-                alert(response.Message);
-                productList.set(response.Data.productId, response.Data);
-                showProducts(productList);
-                goback();
-            } else {
-                alert(response.Message);
+    $('#productform').on('submit', function(e) {
+        e.preventDefault();
+        const productDetails = {
+            productId: uproductId,
+            productTitle: $('#productTitle').val(),
+            category: $('#productCategory').val(),
+            userId: $('#vendorId').val(),
+            price: $('#price').val(),
+            GST: $('#gst').val(),
+            videoUrl: $('#videoLink').val(),
+            details: $('#productDesc').val()
+        };
+        $.ajax({
+            url: url + 'editProduct.php',
+            type: 'POST',
+            data: productDetails,
+            dataType: 'json',
+            success: function(response) {
+                if (response.Responsecode == 200) {
+                    alert(response.Message);
+                    productList.set(response.Data.productId, response.Data);
+                    showProducts(productList);
+                    goback();
+                } else {
+                    alert(response.Message);
+                }
             }
-        }
+        });
     });
-});
 </script>

@@ -1,5 +1,5 @@
 const data = {
-    userId: 1
+    userId: $('#userId').val()
 };
 var userId = null; //for updation
 var details = {};
@@ -9,6 +9,7 @@ const loadVendors = () => {
         url: url + 'getAllVendors.php',
         type: 'POST',
         dataType: 'json',
+        data: data,
         success: function(response) {
             if (response.Data != null) {
                 const count = response.Data.length;

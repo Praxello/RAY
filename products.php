@@ -1,3 +1,7 @@
+<?php
+session_start();
+if(isset($_SESSION['userId'])){
+    $userId = $_SESSION['userId']; ?>
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
@@ -29,7 +33,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+<input type="hidden" id="userId" value="<?php echo $userId;?>"/>
         <div class="wrapper">
             <?php include 'navbar.php';?>
 
@@ -68,8 +72,19 @@
                         <div class="row productlist">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header"><h3>Products List</h3>
-                                    <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                    <div class="card-header">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                            <h3>Products List</h3>
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                            <div class="col-sm-4">
+                                            <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
                                     </div>
                                     <div class="card-body">
                                         <table id="data_table" class="table products">
@@ -287,3 +302,7 @@
        
     </body>
 </html>
+<?php
+}else{
+    header('Location:login.html');
+}?>
