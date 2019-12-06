@@ -1,10 +1,10 @@
 const data = {
     userId: 1
 };
-var uquestionId = null; //for updation
+var questionId = null; //for updation
 var details = {};
 var questionList = new Map();
-const listQuestions = () => {
+const loadVendors = () => {
     $.ajax({
         url: url + 'getallquestionanswer.php',
         type: 'POST',
@@ -22,46 +22,47 @@ const listQuestions = () => {
 }
 
 const showquestion = questionList => {
-    $('#quiz').dataTable().fnDestroy();
+    // console.log(questionList);
+    $('.vendors').dataTable().fnDestroy();
     $('.vendorData').empty();
     var tblData = '';
     for (let k of questionList.keys()) {
-        let question = questionList.get(k);
-        console.log(question);
-        tblData += '<tr><td>' + question.question + '</td>';
-        tblData += '<td>' + question.categoryname + '</td>';
-        tblData += '<td>' + question.option1 + '</td>';
-        tblData += '<td>' + question.option2 + '</td>';
-        tblData += '<td>' + question.option3 + '</td>';
-        tblData += '<td>' + question.option4 + '</td>';
-        tblData += '<td>' + question.correctoption + '</td>';
+        let vendors = questionList.get(k);
+        tblData += '<tr><td>' + vendors.question + '</td>';
+        // tblData += '<td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
+        tblData += '<td>' + vendors.categoryname + '</td>';
+        tblData += '<td>' + vendors.option1 + '</td>';
+        tblData += '<td>' + vendors.option2 + '</td>';
+        tblData += '<td>' + vendors.option3 + '</td>';
+        tblData += '<td>' + vendors.option4 + '</td>';
+        tblData += '<td>' + vendors.correctoption + '</td>';
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editquestion(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
         tblData += '<a href="#" class="list-delete" onclick="removequestion(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
         tblData += '</div></td></tr>';
     }
     $('.vendorData').html(tblData);
-    $('#quiz').dataTable({
+    $('.vendors').dataTable({
         searching: true,
         retrieve: true,
         bPaginate: $('tbody tr').length > 10,
         order: [],
-        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6, 7] }],
+        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6,7] }],
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf'],
         destroy: true
     });
 }
-listQuestions();
+loadVendors();
 
-const editquestion = questionId => {
-    questionId = questionId.toString();
-    if (questionList.has(questionId)) {
+const editquestion = vendorId => {
+    vendorId = vendorId.toString();
+    if (questionList.has(vendorId)) {
         $('.questionlist').hide();
         $('#newquestion').load('edit_question.php');
-        const question = questionList.get(questionId);
-        uquestionId = questionId;
-        details = question;
+        const vendor = questionList.get(vendorId);
+        questionId = vendorId;
+        details = vendor;
     } else {
         alert('something goes wrong');
     }
