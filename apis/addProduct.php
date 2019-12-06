@@ -22,7 +22,7 @@ if (isset($_POST['userId']) && isset($_POST['productTitle']) && isset($_POST['pr
         if(isset($_FILES["imgname"]["type"])){
             $imgname = $_FILES["imgname"]["name"];
             $sourcePath = $_FILES['imgname']['tmp_name']; // Storing source path of the file in a variable
-            $targetPath = "upload/".$productId; // Target path where file is to be stored
+            $targetPath = "upload/".$productId.".jpg"; // Target path where file is to be stored
             move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
           }
         $academicQuery = mysqli_query($conn, "SELECT * FROM ProductMaster where productId = $productId");

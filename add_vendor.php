@@ -1,3 +1,8 @@
+<style>
+.error{
+    color: red;
+}
+</style>
 <link rel="stylesheet" href="plugins/datedropper/datedropper.min.css">
 <div class="row">
     <div class="card">

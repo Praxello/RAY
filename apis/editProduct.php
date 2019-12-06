@@ -14,6 +14,13 @@ if (isset($_POST['productId']) && isset($_POST['userId']) && isset($_POST['produ
     
     $sql = "UPDATE ProductMaster SET userId = $userId,productTitle='$productTitle',price='$price',GST='$GST',category='$category',videoUrl='$videoUrl',details='$details' WHERE productId = $productId";
     $query = mysqli_query($conn, $sql);
+
+    if(isset($_FILES["imgname"]["type"])){
+        $imgname = $_FILES["imgname"]["name"];
+        $sourcePath = $_FILES['imgname']['tmp_name']; // Storing source path of the file in a variable
+        $targetPath = "upload/".$productId.".jpg"; // Target path where file is to be stored
+        move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
+      }
     
     $rowsAffected = mysqli_affected_rows($conn);
     if ($rowsAffected == 1) {
