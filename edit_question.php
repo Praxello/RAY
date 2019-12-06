@@ -102,7 +102,7 @@ loadDetails(details);
     $('#questionForm').on('submit', function(e) {
         e.preventDefault();
         const questionDetails = {
-            questionId:questionId,
+            questionId:uquestionId,
             userId: 1,
             categoryId: $('#categoryId').val(),
             question: $('#question').val(),

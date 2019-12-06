@@ -114,7 +114,7 @@ $('#questionForm').on('submit', function(e) {
         success: function(response) {
             if (response.Responsecode == 200) {
                 console.log(response.Data);
-                questionList.set(response.Data.userId, response.Data);
+                questionList.set(response.Data.questionId, response.Data);
                 showquestion(questionList);
                 goback();
             }

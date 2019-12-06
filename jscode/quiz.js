@@ -1,10 +1,10 @@
 const data = {
     userId: 1
 };
-var questionId = null; //for updation
+var uquestionId = null; //for updation
 var details = {};
 var questionList = new Map();
-const loadVendors = () => {
+const listQuestions = () => {
     $.ajax({
         url: url + 'getallquestionanswer.php',
         type: 'POST',
@@ -26,15 +26,15 @@ const showquestion = questionList => {
     $('.vendorData').empty();
     var tblData = '';
     for (let k of questionList.keys()) {
-        let vendors = questionList.get(k);
-        tblData += '<tr><td>' + vendors.question + '</td>';
-        // tblData += '<td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
-        tblData += '<td>' + vendors.categoryname + '</td>';
-        tblData += '<td>' + vendors.option1 + '</td>';
-        tblData += '<td>' + vendors.option2 + '</td>';
-        tblData += '<td>' + vendors.option3 + '</td>';
-        tblData += '<td>' + vendors.option4 + '</td>';
-        tblData += '<td>' + vendors.correctoption + '</td>';
+        let question = questionList.get(k);
+        console.log(question);
+        tblData += '<tr><td>' + question.question + '</td>';
+        tblData += '<td>' + question.categoryname + '</td>';
+        tblData += '<td>' + question.option1 + '</td>';
+        tblData += '<td>' + question.option2 + '</td>';
+        tblData += '<td>' + question.option3 + '</td>';
+        tblData += '<td>' + question.option4 + '</td>';
+        tblData += '<td>' + question.correctoption + '</td>';
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editquestion(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
         tblData += '<a href="#" class="list-delete" onclick="removequestion(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
@@ -52,16 +52,16 @@ const showquestion = questionList => {
         destroy: true
     });
 }
-loadVendors();
+listQuestions();
 
-const editquestion = vendorId => {
-    vendorId = vendorId.toString();
-    if (questionList.has(vendorId)) {
+const editquestion = questionId => {
+    questionId = questionId.toString();
+    if (questionList.has(questionId)) {
         $('.questionlist').hide();
         $('#newquestion').load('edit_question.php');
-        const vendor = questionList.get(vendorId);
-        questionId = vendorId;
-        details = vendor;
+        const question = questionList.get(questionId);
+        uquestionId = questionId;
+        details = question;
     } else {
         alert('something goes wrong');
     }
