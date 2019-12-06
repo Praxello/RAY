@@ -33,30 +33,7 @@
                 <div class="main-content">
                     <div class="container-fluid">
                         <div class="page-header">
-                            <!-- <div class="row align-items-end">
-                                <div class="col-lg-8">
-                                    <div class="page-header-title">
-                                        <i class="ik ik-inbox bg-blue"></i>
-                                        <div class="d-inline">
-                                            <h5>Data Table</h5>
-                                            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <nav class="breadcrumb-container" aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item">
-                                                <a href="../index.html"><i class="ik ik-home"></i></a>
-                                            </li>
-                                            <li class="breadcrumb-item">
-                                                <a href="#">Tables</a>
-                                            </li>
-                                            <li class="breadcrumb-item active" aria-current="page">Data Table</li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div> -->
+
                         </div>
                         <div id="newquestion"></div>
                         <div class="row questionlist">
@@ -84,14 +61,10 @@
                                         <table id="quiz" class="table">
                                             <thead>
                                                 <tr>
-                                                    <th style="width: 40%;">Question</th>
+                                                    <!-- <th style="width: 40%;">Question</th> -->
                                                     <th style="width: 40%;">Category</th>
-                                                    <th style="width: 40%;" class="nosort">Option1</th>
-                                                    <th style="width: 40%;">Option2</th>
-                                                    <th style="width: 40%;">Option3</th>
-                                                    <th style="width: 40%;">Option4</th>
-                                                    <th style="width: 40%;">Correct Option</th>
-                                                    <th style="width: 40%;" class="nosort">&nbsp;</th>
+                                                    <th style="width: 40%;" class="nosort">Total Questions</th>
+                                                    <th style="width: 20%;" class="nosort">&nbsp;</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="vendorData">
@@ -135,7 +108,7 @@
                 <script src="plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
                 <script src="plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
                 <script src="plugins/datedropper/datedropper.min.js"></script>
-                <script src="dist/js/theme.min.js"></script>
+
                 <script src="js/form-picker.js"></script>
 
                 <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>

@@ -64,13 +64,13 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="productDesc">Banner Image</label>
+                            <label for="productDesc">Brand Image</label>
                             <input type="file" name="imgname" id="imgname" class="form-control" accept="image/*" onchange="loadFile(event)">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="output">Banner Image view</label>
+                            <label for="output">Brand Image view</label>
                             <img src="" alt="" id="output" width="110px" height="110px">
                         </div>
                     </div>
