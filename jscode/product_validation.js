@@ -16,13 +16,13 @@ $(function() {
         }
         , messages: {
             productTitle: {
-                required: "Please enter a valid email address", minlength: "Enter a value atleast two characters", maxlength: "Length Exceed 50 characters"
+                required: "Please enter a valid product name", minlength: "Enter a valid product", maxlength: "Length Exceed 50 characters"
             }
             , category: {
-                required: "Please provide a password", number: "it should be number",
+                required: "Please enter a category in numbers", number: "It should be number"
             }
             , price: {
-                required: "Please enter numbers", number: "enter valid price"
+                required: "Please enter price", number: "enter valid price"
             }
             , GST: {
                 // required: "Enter GSTN number", number: "Valid GSTN"
