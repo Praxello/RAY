@@ -1,11 +1,7 @@
 const data = {
     userId: 1
 };
-<<<<<<< HEAD:jscode/questionanswer.js
-var questionId = null; //for updation
-=======
 var uquestionId = null; //for updation
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd:jscode/quiz.js
 var details = {};
 var questionList = new Map();
 const listQuestions = () => {
@@ -26,12 +22,7 @@ const listQuestions = () => {
 }
 
 const showquestion = questionList => {
-<<<<<<< HEAD:jscode/questionanswer.js
-    // console.log(questionList);
-    $('.vendors').dataTable().fnDestroy();
-=======
     $('#quiz').dataTable().fnDestroy();
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd:jscode/quiz.js
     $('.vendorData').empty();
     var tblData = '';
     for (let k of questionList.keys()) {
@@ -68,15 +59,9 @@ const editquestion = questionId => {
     if (questionList.has(questionId)) {
         $('.questionlist').hide();
         $('#newquestion').load('edit_question.php');
-<<<<<<< HEAD:jscode/questionanswer.js
-        const vendor = questionList.get(vendorId);
-        questionId = vendorId;
-        details = vendor;
-=======
         const question = questionList.get(questionId);
         uquestionId = questionId;
         details = question;
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd:jscode/quiz.js
     } else {
         alert('something goes wrong');
     }
