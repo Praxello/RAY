@@ -1,7 +1,7 @@
 const data = {
     userId: 1
 };
-var userId = null; //for updation
+var questionId = null; //for updation
 var details = {};
 var questionList = new Map();
 const loadVendors = () => {
@@ -22,7 +22,7 @@ const loadVendors = () => {
 }
 
 const showquestion = questionList => {
-    console.log(questionList);
+    // console.log(questionList);
     $('.vendors').dataTable().fnDestroy();
     $('.vendorData').empty();
     var tblData = '';
@@ -59,9 +59,9 @@ const editquestion = vendorId => {
     vendorId = vendorId.toString();
     if (questionList.has(vendorId)) {
         $('.questionlist').hide();
-        $('#newquestion').load('edit_vendor.php');
+        $('#newquestion').load('edit_question.php');
         const vendor = questionList.get(vendorId);
-        userId = vendorId;
+        questionId = vendorId;
         details = vendor;
     } else {
         alert('something goes wrong');

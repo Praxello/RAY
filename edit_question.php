@@ -93,31 +93,48 @@
     </div>
 </div>
 <script>
+function loadDetails(details){
+        // console.log(details);
+        $('#categoryId').val(details.categoryId);
+        $('#question').val(details.question);
+        $('#option1').val(details.option1);
+        $('#option2').val(details.option2);
+        $('#option3').val(details.option3);
+        $('#option4').val(details.option4);
+        $('#correctoption').val(details.correctoption);
+        $('#ansdesc').val(details.ansdes);
+  }
+loadDetails(details);
 $('#questionForm').on('submit', function(e) {
     e.preventDefault();
-    const questionDetails = {
-        userId: 1,
-        categoryId: $('#categoryId').val(),
-        question: $('#question').val(),
-        option1: $('#option1').val(),
-        option2: $('#option2').val(),
-        option3: $('#option3').val(),
-        option4: $('#option4').val(),
-        correctoption: $('#correctoption').val(),
-        ansdes:$('#ansdesc').val()
+    const vendorDetails = {
+      userId: 1,
+      questionId:questionId,
+      categoryId: $('#categoryId').val(),
+      question: $('#question').val(),
+      option1: $('#option1').val(),
+      option2: $('#option2').val(),
+      option3: $('#option3').val(),
+      option4: $('#option4').val(),
+      correctoption: $('#correctoption').val(),
+      ansdes:$('#ansdesc').val()
     };
     $.ajax({
-        url: url + 'addquestionanswer.php',
+        url: url + 'editquestionanswer.php',
         type: 'POST',
-        data: questionDetails,
+        data: vendorDetails,
         dataType: 'json',
         success: function(response) {
             if (response.Responsecode == 200) {
-                console.log(response.Data);
-                // console.log(response.Data.userId);
-                questionList.set(response.Data.userId, response.Data);
+               console.log(response.Data);
+                if(questionList.has(response.Data.questionId)){
+                    questionList.delete(response.Data.questionId);
+                }
+                questionList.set(response.Data.questionId, response.Data);
                 showquestion(questionList);
                 goback();
+            }else{
+                alert(response.Message);
             }
         }
     });

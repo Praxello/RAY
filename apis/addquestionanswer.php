@@ -19,9 +19,9 @@ if (isset($_POST['userId']) && isset($_POST['categoryId']) && isset($_POST['ques
     $option4 = mysqli_real_escape_string($conn, $option4);
     $ansdes = mysqli_real_escape_string($conn, $ansdes);
 
-    $sql   = "INSERT INTO QuestionAnswerMaster(categoryId, question, option1, option2, option3,option4, correctoption, ansdes) VALUES
+    $sql   = "INSERT INTO QuestionAnswerMaster(userId,categoryId, question, option1, option2, option3,option4, correctoption, ansdes) VALUES
     ($userId,$categoryId,'$question','$option1','$option2','$option3','$option4','$correctoption','$ansdes')";
-    echo $sql;
+    // echo $sql;
     $query = mysqli_query($conn, $sql);
 
     $rowsAffected = mysqli_affected_rows($conn);
