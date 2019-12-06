@@ -30,7 +30,7 @@ const showProducts = productList => {
     var tblData = '';
     for (let k of productList.keys()) {
         let products = productList.get(k);
-        tblData += '<tr><td><img src="' + url + 'upload/' + products.productId + '" class="table-user-thumb" alt="Image"></td>';
+        tblData += '<tr><td><img src="' + url + 'upload/' + products.productId + '.jpg" class="table-user-thumb" alt="Image"></td>';
         tblData += '<td>' + products.productTitle + '</td>';
         tblData += '<td>' + products.price + '</td>';
         tblData += '<td>' + products.GST + '</td>';

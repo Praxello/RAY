@@ -19,7 +19,7 @@ if (isset($_POST['questionId']) && isset($_POST['userId']) && isset($_POST['cate
     $option4 = mysqli_real_escape_string($conn, $option4);
     $ansdes = mysqli_real_escape_string($conn, $ansdes);
 
-    $sql   = "UPDATE QuestionAnswerMaster SET categoryId='$categoryId',question='$categoryId',option1='$option1',
+    $sql   = "UPDATE QuestionAnswerMaster SET categoryId='$categoryId',question='$question',option1='$option1',
     option2='$option2',option3='$option3',option4='$option4',correctoption='$correctoption',ansdes='$ansdes' where questionId='$questionId'";
     $query = mysqli_query($conn, $sql);
     $rowsAffected = mysqli_affected_rows($conn);

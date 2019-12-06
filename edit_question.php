@@ -1,6 +1,23 @@
 <div class="row">
     <div class="card">
         <div class="card-header">
+<<<<<<< HEAD
+            <h3>Add Question Details</h3></div>
+
+        <div class="card-body">
+            <form class="forms-sample" id="questionForm" method="POST">
+
+
+                    <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label for="exampleTextarea">Question </label>
+                              <textarea class="form-control" id="question" rows="3"></textarea>
+                          </div>
+                      </div>
+                    </div>
+
+=======
             <h3>Update Question Details</h3></div>
 
         <div class="card-body">
@@ -13,38 +30,63 @@
                         </div>
                     </div>
                 </div>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+<<<<<<< HEAD
+                            <label for="exampleInputMobileno">Option 1</label>
+=======
                             <label for="exampleInputMobileno">Option A</label>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
                             <input type="text" class="form-control" id="option1" placeholder="Option 1">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
+<<<<<<< HEAD
+                            <label for="exampleInputEmail3">Option 2</label>
+=======
                             <label for="exampleInputEmail3">Option B</label>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
                             <input type="text" class="form-control" id="option2" placeholder="Option 2">
                         </div>
                     </div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+<<<<<<< HEAD
+                            <label for="exampleInputMobileno">Option 3</label>
+=======
                             <label for="exampleInputMobileno">Option C</label>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
                             <input type="text" class="form-control" id="option3" placeholder="Option 3">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
+<<<<<<< HEAD
+                            <label for="exampleInputEmail3">Option 4</label>
+=======
                             <label for="exampleInputEmail3">Option D</label>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
                             <input type="text" class="form-control" id="option4" placeholder="Option 4">
                         </div>
                     </div>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -57,10 +99,17 @@
                         <div class="form-group">
                             <label for="exampleSelectPincode">Category</label>
                             <select class="form-control select2" id="categoryId">
+<<<<<<< HEAD
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+=======
                                 <option value="1">Option A</option>
                                 <option value="2">Option B</option>
                                 <option value="3">Option C</option>
                                 <option value="4">Option D</option>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
 
                             </select>
 
@@ -71,10 +120,17 @@
                         <div class="form-group">
                             <label for="exampleSelectLandline">Correct Option</label>
                             <select class="form-control select2" id="correctoption">
+<<<<<<< HEAD
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+=======
                                 <option value="1">Option A</option>
                                 <option value="2">Option B</option>
                                 <option value="3">Option C</option>
                                 <option value="4">Option D</option>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
 
                             </select>
                         </div>
@@ -88,6 +144,55 @@
     </div>
 </div>
 <script>
+<<<<<<< HEAD
+function loadDetails(details){
+        // console.log(details);
+        $('#categoryId').val(details.categoryId);
+        $('#question').val(details.question);
+        $('#option1').val(details.option1);
+        $('#option2').val(details.option2);
+        $('#option3').val(details.option3);
+        $('#option4').val(details.option4);
+        $('#correctoption').val(details.correctoption);
+        $('#ansdesc').val(details.ansdes);
+  }
+loadDetails(details);
+$('#questionForm').on('submit', function(e) {
+    e.preventDefault();
+    const vendorDetails = {
+      userId: 1,
+      questionId:questionId,
+      categoryId: $('#categoryId').val(),
+      question: $('#question').val(),
+      option1: $('#option1').val(),
+      option2: $('#option2').val(),
+      option3: $('#option3').val(),
+      option4: $('#option4').val(),
+      correctoption: $('#correctoption').val(),
+      ansdes:$('#ansdesc').val()
+    };
+    $.ajax({
+        url: url + 'editquestionanswer.php',
+        type: 'POST',
+        data: vendorDetails,
+        dataType: 'json',
+        success: function(response) {
+            if (response.Responsecode == 200) {
+               console.log(response.Data);
+                if(questionList.has(response.Data.questionId)){
+                    questionList.delete(response.Data.questionId);
+                }
+                questionList.set(response.Data.questionId, response.Data);
+                showquestion(questionList);
+                goback();
+            }else{
+                alert(response.Message);
+            }
+        }
+    });
+});
+</script>
+=======
     function loadDetails(product) {
     $('#question').val(product.question);
     $('#option1').val(product.option1);
@@ -102,7 +207,7 @@ loadDetails(details);
     $('#questionForm').on('submit', function(e) {
         e.preventDefault();
         const questionDetails = {
-            questionId:questionId,
+            questionId:uquestionId,
             userId: 1,
             categoryId: $('#categoryId').val(),
             question: $('#question').val(),
@@ -129,3 +234,4 @@ loadDetails(details);
         });
     });
 </script>
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd

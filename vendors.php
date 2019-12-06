@@ -9,7 +9,7 @@ if(isset($_SESSION['userId'])){
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Data Tables | ThemeKit - Admin Template</title>
+        <title>Radiology | Vendors List</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,8 +49,8 @@ if(isset($_SESSION['userId'])){
                                     <div class="page-header-title">
                                         <i class="ik ik-inbox bg-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Vendor Form Details</h5>
-                                            <!-- <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> -->
+                                            <h5>Vendors</h5>
+                                            <span>List of vendors</span>
                                         </div>
                                     </div>
                                 </div>

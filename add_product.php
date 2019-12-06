@@ -79,6 +79,7 @@
     </div>
 </div>
 <script src="js/jquery.validate.js"></script>
+<script src="jscode/loadFile.js"></script>
 <script src="jscode/vendorList.js"></script>
 <script src="jscode/product_validation.js"></script>
 <script src="jscode/addproduct.js"> </script>

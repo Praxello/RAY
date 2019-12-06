@@ -49,8 +49,8 @@ if(isset($_SESSION['userId'])){
                                     <div class="page-header-title">
                                         <i class="ik ik-inbox bg-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Data Table</h5>
-                                            <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                            <h5>Products List</h5>
+                                            <!-- <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> -->
                                         </div>
                                     </div>
                                 </div>
