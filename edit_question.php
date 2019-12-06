@@ -114,5 +114,4 @@ function questionList(categoryId){
   });
 }
 questionList(uquestionId);
-
 </script>

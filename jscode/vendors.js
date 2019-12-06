@@ -32,10 +32,11 @@ const showVendors = vendorsList => {
     var tblData = '';
     for (let k of vendorsList.keys()) {
         let vendors = vendorsList.get(k);
+        var bdate = moment(vendors.birthDate).format("dddd, MMMM Do YYYY");
         tblData += '<tr><td>' + vendors.contactNumber + '</td>';
         tblData += '<td>' + vendors.fname + ' ' + vendors.lname + '</td>';
         tblData += '<td>' + vendors.emailId + '</td>';
-        tblData += '<td>' + vendors.birthDate + '</td>';
+        tblData += '<td>' + bdate + '</td>';
         tblData += '<td>' + vendors.contactAddress + '</td>';
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editVendor(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
