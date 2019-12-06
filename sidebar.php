@@ -1,7 +1,7 @@
 
                 <div class="app-sidebar colored">
                     <div class="sidebar-header">
-                        <a class="header-brand" href="index.html">
+                        <a class="header-brand" href="products.php">
                             <div class="logo-img">
                                <img src="src/img/brand-white.svg" class="header-brand-img" alt="lavalite"> 
                             </div>

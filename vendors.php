@@ -82,7 +82,7 @@ if(isset($_SESSION['userId'])){
                                           <div class="col-sm-4">
 
                                           </div>
-                                          <div class="col-sm-4">
+                                          <div class="col-sm-4 vendorButton">
                                             <button type="button" class="btn btn-primary" style="float: right;" onclick="addVendor();" >New Vendor</button>
                                           </div>
                                         </div>

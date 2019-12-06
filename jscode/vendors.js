@@ -2,6 +2,9 @@ const data = {
     userId: $('#userId').val(),
     roleId: $('#roleId').val()
 };
+if (data.roleId != 1) {
+    $('.vendorButton').hide();
+}
 var userId = null; //for updation
 var details = {};
 var vendorsList = new Map();
