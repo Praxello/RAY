@@ -25,8 +25,8 @@ $(function() {
                 required: "Please enter price", number: "enter valid price"
             }
             , GST: {
-                // required: "Enter GSTN number", number: "Valid GSTN"
-                required: "Enter HSN Code", minlength: "It shouldn't be accept charectors or symbols, please enter valid 6 digits", maxlength: "It canot be exceed mpre than 6 digits" 
+              
+                required: "Enter HSN Code", minlength: "It shouldn't be accept charectors or symbols, please enter valid 6 digits", maxlength: "It cannot be exceed mpre than 6 digits" 
             }
         }
     }

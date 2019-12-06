@@ -13,21 +13,21 @@
                             <div class="form-group">
 
                                 <label for="exampleInputName1">First Name</label>
-                                <input type="text" class="form-control" id="fname" placeholder="First Name">
+                                <input type="text" class="form-control" id="fname" name="Fname" placeholder="First Name">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
 
                                 <label for="exampleInputName2">Middle Name</label>
-                                <input type="text" class="form-control" id="mname" placeholder=" Middle Name">
+                                <input type="text" class="form-control" id="mname" name="Mname" placeholder=" Middle Name">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
 
                                 <label for="exampleInputName3">Last Name</label>
-                                <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                                <input type="text" class="form-control" id="lname" name="Lname" placeholder="Last Name">
                             </div>
                         </div>
                     </div>
@@ -37,21 +37,21 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleInputMobileno">Mobile No</label>
-                            <input type="Mobileno" class="form-control" id="contactNumber" placeholder="Mobile no">
+                            <input type="Mobileno" class="form-control" id="contactNumber" name="Contact" placeholder="Mobile no">
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleInputEmail3">Email address</label>
-                            <input type="email" class="form-control" id="emailId" placeholder="Email">
+                            <input type="email" class="form-control" id="emailId" name="EmailId" placeholder="Email">
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleSelectGender">Birth Date</label>
-                            <input id="dropper-max-year" class="form-control" type="text" placeholder="Max Year 2020" />
+                            <input id="dropper-max-year" class="form-control" type="text" name="Bdate" placeholder="Max Year 2020" />
                         </div>
                     </div>
                    
