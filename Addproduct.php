@@ -778,7 +778,7 @@
                                         </div>
                                     </div>
                                     <div class="message media">
-                                        <figure class="user--online">
+                           .             <figure class="user--online">
                                             <a href="#">
                                                 <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
@@ -870,7 +870,7 @@
                     <div class="modal-body d-flex align-items-center">
                         <div class="container">
                             <div class="apps-wrap">
-                                <div class="app-item">
+                                <div class="app-item">  
                                     <a href="#"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                                 </div>
                                 <div class="app-item">

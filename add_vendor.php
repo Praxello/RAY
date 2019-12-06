@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="plugins/datedropper/datedropper.min.css">
 <div class="row">
     <div class="card">
         <div class="card-header">
@@ -50,9 +51,11 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleSelectGender">Birth Date</label>
-                            <input id="dropper-max-year" class="form-control" type="date" placeholder="Max Year 2020">
+                            <input id="dropper-max-year" class="form-control" type="text" placeholder="Max Year 2020" />
                         </div>
                     </div>
+                   
+                    
                 </div>
 
                 <div class="row">
@@ -85,6 +88,9 @@
         </div>
     </div>
 </div>
+<script src="plugins/datedropper/datedropper.min.js"></script>
+<script src="js/form-picker.js"></script>
+<script src="plugins/moment/moment.js"></script>
 <script>
 $('#vendorForm').on('submit', function(e) {
     e.preventDefault();
@@ -96,7 +102,8 @@ $('#vendorForm').on('submit', function(e) {
         emailId: $('#emailId').val(),
         contactAddress: $('#contactAddress').val(),
         pincode: $('#pincode').val(),
-        landline: $('#landline').val()
+        landline: $('#landline').val(),
+        birthDate:moment($('#dropper-max-year').val()).format('YYYY-MM-DD')
     };
     $.ajax({
         url: url + 'addVendor.php',
@@ -105,8 +112,6 @@ $('#vendorForm').on('submit', function(e) {
         dataType: 'json',
         success: function(response) {
             if (response.Responsecode == 200) {
-                console.log(response.Data);
-                console.log(response.Data.userId);
                 vendorsList.set(response.Data.userId, response.Data);
                 showVendors(vendorsList);
                 goback();

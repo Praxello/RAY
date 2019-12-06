@@ -6,10 +6,12 @@ mysqli_set_charset($conn, 'utf8');
 $response = null;
 $records  = null;
 extract($_POST);
-if(isset($_POST['userId'])){
-    $sql      = "SELECT * FROM ProductMaster  WHERE userId = $userId";
-}else{
-    $sql = "SELECT * FROM ProductMaster";
+if(isset($_POST['userId']) && isset($_POST['roleId'])){
+    if($roleId==1){
+        $sql = "SELECT * FROM ProductMaster";
+    }else{
+        $sql = "SELECT * FROM ProductMaster  WHERE userId = $userId";
+    }  
 }
 $jobQuery = mysqli_query($conn, $sql);
 if ($jobQuery != null) {

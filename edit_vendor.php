@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="plugins/datedropper/datedropper.min.css">
 <div class="row">
     <div class="card">
         <div class="card-header">
@@ -5,7 +6,6 @@
 
         <div class="card-body">
             <form class="forms-sample" id="vendorForm" method="POST">
-                
 
                     <div class="row">
                         <div class="col-md-4">
@@ -49,7 +49,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="exampleSelectGender">Birth Date</label>
-                            <input id="birthDate" class="form-control" type="date" placeholder="Max Year 2020">
+                            <input id="dropper-max-year" class="form-control" type="text" placeholder="Max Year 2020">
                         </div>
                     </div>
                 </div>
@@ -84,15 +84,17 @@
         </div>
     </div>
 </div>
+<script src="plugins/datedropper/datedropper.min.js"></script>
+<script src="js/form-picker.js"></script>
+<script src="plugins/moment/moment.js"></script>
 <script>
-   
     function loadDetails(vendor){
         $('#fname').val(vendor.fname);
         $('#mname').val(vendor.mname);
         $('#lname').val(vendor.lname);
         $('#contactNumber').val(vendor.contactNumber);
         $('#emailId').val(vendor.emailId);
-        $('#birthDate').val(vendor.birthDate);
+        $('#dropper-max-year').val(vendor.birthDate);
         $('#contactAddress').val(vendor.contactAddress);
         $('#pincode').val(vendor.pincode);
         $('#landline').val(vendor.landline);
@@ -110,7 +112,7 @@ $('#vendorForm').on('submit', function(e) {
         contactAddress: $('#contactAddress').val(),
         pincode: $('#pincode').val(),
         landline: $('#landline').val(),
-        birthDate: $('#birthDate').val()
+        birthDate:moment($('#dropper-max-year').val()).format('YYYY-MM-DD')
     };
     $.ajax({
         url: url + 'editVendor.php',

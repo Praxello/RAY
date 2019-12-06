@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['userId'])){
+    $userId = $_SESSION['userId'];
+    $roleId = $_SESSION['roleId']; ?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -18,6 +23,7 @@
         <link rel="stylesheet" href="plugins/ionicons/dist/css/ionicons.min.css">
         <link rel="stylesheet" href="plugins/icon-kit/dist/css/iconkit.min.css">
         <link rel="stylesheet" href="plugins/perfect-scrollbar/css/perfect-scrollbar.css">
+        <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css">
         <link rel="stylesheet" href="plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="plugins/jquery-minicolors/jquery.minicolors.css">
         <link rel="stylesheet" href="plugins/datedropper/datedropper.min.css">
@@ -26,6 +32,11 @@
     </head>
 
     <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <input type="hidden" id="roleId" value="<?php echo $roleId;?>"/>
+        <input type="hidden" id="userId" value="<?php echo $userId;?>"/>
         <div class="wrapper">
             <?php include 'navbar.php';?>
             <div class="page-wrap">
@@ -81,11 +92,10 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <table id="data_table" class="table vendors">
+                                        <table  class="table" id="vendors">
                                             <thead>
                                                 <tr>
                                                     <th>Contact Number</th>
-                                                    <th class="nosort">Avatar</th>
                                                     <th>Name</th>
                                                     <th>Email</th>
                                                     <th>Birth Date</th>
@@ -115,11 +125,9 @@
 
 
                <?php include "dashboardmodal.php"; ?>
-
+               
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-                <!-- <script>
-                    window.jQuery || document.write('<script src="src/js/vendor/jquery-3.3.1.min.js"><\/script>')
-                </script> -->
+               
                 <script src="plugins/popper.js/dist/umd/popper.min.js"></script>
                 <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
                 <script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
@@ -128,20 +136,18 @@
                 <script src="plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
                 <script src="dist/js/theme.min.js"></script>
                 <script src="js/datatables.js"></script>
-
                 <script src="plugins/moment/moment.js"></script>
-                <script src="plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
-                <script src="plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
-                <script src="plugins/datedropper/datedropper.min.js"></script>
-                <script src="dist/js/theme.min.js"></script>
-                <script src="js/form-picker.js"></script>
-
                 <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
-                <script src="plugins/summernote/dist/summernote-bs4.min.js"></script>
+                <script src="plugins/summernote/dist/summernote-bs4.min.js"></script> 
                 <script src="js/layouts.js"></script>
                 <script src="jscode/apis.js"></script>
-                <script src="jscode/vendors.js"></script>
+                <script src="jscode/vendors.js"></script> 
 
     </body>
 
 </html>
+<?php 
+}else{
+    header('Location:login.html');
+}
+?>

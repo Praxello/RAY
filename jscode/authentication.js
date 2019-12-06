@@ -13,8 +13,8 @@ $('#signin').on('submit', function(event) {
             $("#wait").css("display", "block");
         },
         success: function(response) {
-            if (response.Data != null) {
-                window.location.href = 'createSession.php?userId=' + response.Data.userId;
+            if (response.Responsecode == 200) {
+                window.location.href = 'createSession.php?userId=' + response.Data.userId + '&roleId=' + response.Data.roleId;
             } else {
                 $('.message').show();
             }

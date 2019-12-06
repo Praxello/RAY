@@ -20,14 +20,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputMobileno">Option 1</label>
+                            <label for="exampleInputMobileno">Option A</label>
                             <input type="text" class="form-control" id="option1" placeholder="Option 1">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Option 2</label>
+                            <label for="exampleInputEmail3">Option B</label>
                             <input type="text" class="form-control" id="option2" placeholder="Option 2">
                         </div>
                     </div>
@@ -37,14 +37,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputMobileno">Option 3</label>
+                            <label for="exampleInputMobileno">Option C</label>
                             <input type="text" class="form-control" id="option3" placeholder="Option 3">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail3">Option 4</label>
+                            <label for="exampleInputEmail3">Option D</label>
                             <input type="text" class="form-control" id="option4" placeholder="Option 4">
                         </div>
                     </div>
@@ -62,10 +62,10 @@
                         <div class="form-group">
                             <label for="exampleSelectPincode">Category</label>
                             <select class="form-control select2" id="categoryId">
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
-                                <option value="4">Option 4</option>
+                                <option value="1">Option A</option>
+                                <option value="2">Option B</option>
+                                <option value="3">Option C</option>
+                                <option value="4">Option D</option>
 
                             </select>
 
@@ -76,10 +76,10 @@
                         <div class="form-group">
                             <label for="exampleSelectLandline">Correct Option</label>
                             <select class="form-control select2" id="correctoption">
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
-                                <option value="4">Option 4</option>
+                            <option value="1">Option A</option>
+                                <option value="2">Option B</option>
+                                <option value="3">Option C</option>
+                                <option value="4">Option D</option>
 
                             </select>
                         </div>
@@ -114,8 +114,7 @@ $('#questionForm').on('submit', function(e) {
         success: function(response) {
             if (response.Responsecode == 200) {
                 console.log(response.Data);
-                // console.log(response.Data.userId);
-                questionList.set(response.Data.userId, response.Data);
+                questionList.set(response.Data.questionId, response.Data);
                 showquestion(questionList);
                 goback();
             }

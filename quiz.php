@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -82,7 +81,7 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <table id="data_table" class="table vendors">
+                                        <table id="quiz" class="table">
                                             <thead>
                                                 <tr>
                                                     <th style="width: 40%;">Question</th>
@@ -143,8 +142,7 @@
                 <script src="plugins/summernote/dist/summernote-bs4.min.js"></script>
                 <script src="js/layouts.js"></script>
                 <script src="jscode/apis.js"></script>
-
-                <script src="jscode/questionanswer.js"></script>
+                <script src="jscode/quiz.js"></script>
 
     </body>
 

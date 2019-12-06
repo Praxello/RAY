@@ -10,7 +10,7 @@ extract($_POST);
 if (isset($_POST['userId']) && isset($_POST['categoryId']) && isset($_POST['question']) && isset($_POST['option1']) && isset($_POST['option2'])
 && isset($_POST['option3']) && isset($_POST['option4']) && isset($_POST['correctoption'])) {
 
-    // $details = isset($_POST['details']) ? $_POST['details'] : 'NULL';
+    $ansdes = isset($_POST['ansdes']) ? $_POST['ansdes'] : 'NULL';
 
     $question = mysqli_real_escape_string($conn, $question);
     $option1 = mysqli_real_escape_string($conn, $option1);
@@ -19,9 +19,15 @@ if (isset($_POST['userId']) && isset($_POST['categoryId']) && isset($_POST['ques
     $option4 = mysqli_real_escape_string($conn, $option4);
     $ansdes = mysqli_real_escape_string($conn, $ansdes);
 
+<<<<<<< HEAD
     $sql   = "INSERT INTO QuestionAnswerMaster(userId,categoryId, question, option1, option2, option3,option4, correctoption, ansdes) VALUES
     ($userId,$categoryId,'$question','$option1','$option2','$option3','$option4','$correctoption','$ansdes')";
     // echo $sql;
+=======
+    $sql   = "INSERT INTO QuestionAnswerMaster(categoryId,userId, question, option1, option2, option3,option4, correctoption, ansdes) VALUES
+    ($userId,$categoryId,'$question','$option1','$option2','$option3','$option4','$correctoption','$ansdes')";
+
+>>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
     $query = mysqli_query($conn, $sql);
 
     $rowsAffected = mysqli_affected_rows($conn);

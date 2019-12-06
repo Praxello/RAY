@@ -1,5 +1,6 @@
 const data = {
-    userId: 1
+    userId: $('#userId').val(),
+    roleId: $('#roleId').val()
 };
 var productList = new Map();
 var vendorsList = new Map();
@@ -10,6 +11,7 @@ const loadProducts = () => {
         url: url + 'getProducts.php',
         type: 'POST',
         dataType: 'json',
+        data: data,
         success: function(response) {
             if (response.Data != null) {
                 const count = response.Data.length;
@@ -23,14 +25,16 @@ const loadProducts = () => {
 }
 
 const showProducts = productList => {
+    $('#products').dataTable().fnDestroy();
+    $('.productsData').empty();
     var tblData = '';
     for (let k of productList.keys()) {
         let products = productList.get(k);
-        tblData += '<tr><td>' + products.productTitle + '</td>';
-        tblData += '<td><img src="img/users/1.jpg" class="table-user-thumb" alt=""></td>';
+        tblData += '<tr><td><img src="' + url + 'upload/' + products.productId + '" class="table-user-thumb" alt="Image"></td>';
+        tblData += '<td>' + products.productTitle + '</td>';
         tblData += '<td>' + products.price + '</td>';
         tblData += '<td>' + products.GST + '</td>';
-        tblData += '<td>' + products.videoUrl + '</td>';
+        tblData += '<td><a href="' + products.videoUrl + '" target="_blank">' + products.videoUrl + '</a></td>';
         tblData += '<td>' + products.details + '</td>';
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editProduct(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
@@ -38,7 +42,7 @@ const showProducts = productList => {
         tblData += '</div></td></tr>';
     }
     $('.productsData').html(tblData);
-    $('.products').dataTable({
+    $('#products').dataTable({
         searching: true,
         retrieve: true,
         bPaginate: $('tbody tr').length > 10,
@@ -56,6 +60,7 @@ const loadVendors = () => {
         url: url + 'getAllVendors.php',
         type: 'POST',
         dataType: 'json',
+        data: data,
         success: function(response) {
             if (response.Data != null) {
                 const count = response.Data.length;
@@ -68,7 +73,6 @@ const loadVendors = () => {
 }
 loadVendors(); //for dropdown list
 const editProduct = productId => {
-    console.log(productId);
     productId = productId.toString();
     if (productList.has(productId)) {
         $('.productlist').hide();

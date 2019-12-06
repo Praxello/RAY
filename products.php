@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(isset($_SESSION['userId'])){
+    $userId = $_SESSION['userId'];
+    $roleId = $_SESSION['roleId']; ?>
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
@@ -29,7 +34,8 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+<input type="hidden" id="userId" value="<?php echo $userId;?>"/>
+<input type="hidden" id="roleId" value="<?php echo $roleId;?>"/>
         <div class="wrapper">
             <?php include 'navbar.php';?>
 
@@ -68,17 +74,28 @@
                         <div class="row productlist">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header"><h3>Products List</h3>
-                                    <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                    <div class="card-header">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                            <h3>Products List</h3>
+                                            </div>
+                                            <div class="col-sm-4"></div>
+                                            <div class="col-sm-4">
+                                            <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
                                     </div>
                                     <div class="card-body">
-                                        <table id="data_table" class="table products">
+                                        <table id="products" class="table">
                                             <thead>
                                                 <tr>
+                                                <th class="nosort">Banner</th>
                                                     <th>Title</th>
-                                                    <th class="nosort">Avatar</th>
                                                     <th>Price</th>
-                                                    <th>GST</th>
+                                                    <th>HSN</th>
                                                     <th>Video URL</th>
                                                     <th>Details</th>
                                                     <th class="nosort">&nbsp;</th>
@@ -110,7 +127,7 @@
                                     <div class="message media reply">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/3.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/3.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -120,7 +137,7 @@
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -130,7 +147,7 @@
                                     <div class="message media reply">
                                         <figure class="user--offline">
                                             <a href="#">
-                                                <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -141,7 +158,7 @@
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -151,7 +168,7 @@
                                     <div class="message media reply">
                                         <figure class="user--busy">
                                             <a href="#">
-                                                <img src="../img/users/5.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/5.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -161,7 +178,7 @@
                                     <div class="message media">
                                         <figure class="user--online">
                                             <a href="#">
-                                                <img src="../img/users/1.jpg" class="rounded-circle" alt="">
+                                                <img src="img/users/1.jpg" class="rounded-circle" alt="">
                                             </a>
                                         </figure>
                                         <div class="message-body media-body">
@@ -287,3 +304,7 @@
        
     </body>
 </html>
+<?php
+}else{
+    header('Location:login.html');
+}?>
