@@ -2,39 +2,42 @@ $(function() {
     var jvalidate=$("#questionForm").validate( {
         ignore: [], rules: {
             question: {
-                required: true, maxlength: 500
+                required: true, minlength: 5,   
             }
-            , lname: {
-                required: true, maxlength: 50
+            , option1: {
+                required: true, minlength: 2
             }
             
-            , contactNumber: {
-                required: true, number: true, maxlength: 10
+            , option2: {
+                required: true, minlength: 2
             }
-            , emailId: {
-                required: true, minlength: 6
+
+            , option3: {
+                required: true, minlength: 2
             }
-            , pincode: {
-                minlength: 6, maxlength: 6
+
+            , option4: {
+                required: true, minlength: 2
             }
         }
+
         , messages: {
-            fname: {
-                required: "Please enter first name", maxlength: "Length Exceed upto 50 characters"
+            question: {
+                required: "Please write a question?", minlength: "Question Length Exceed more than 5 characters"
             }
-            , lname: {
-                required: "Please enter Last name", maxlength: "Length Exceed upto 50 characters"
+            , option1: {
+                required: "Write option A", minlength: "Enter minimum words"
             }
             
-            , contactNumber: {
-                required: "Please enter mobile number", number: "enter valid number", maxlength: "Should enter max 10 digits"
+            , option2: {
+                required: "Write option B", minlength: "Enter minimum words"
             }
-            , emailId: {
+            , option3: {
                
-                required: "Enter valid Email Id", minlength: "Example@gmail.com"
+                required: "Write option C", minlength: "Enter minimum words"
         }
-        , pincode: {
-            minlength: "Please enter minimum 6 digits", maxlength: "It cannot be exceed more than 6 digits"
+        , option4: {
+            required: "Write option D", minlength: "Enter minimum words"
         }
     }
 });
