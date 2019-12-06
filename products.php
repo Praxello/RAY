@@ -50,7 +50,7 @@ if(isset($_SESSION['userId'])){
                                         <i class="ik ik-inbox bg-blue"></i>
                                         <div class="d-inline">
                                             <h5>Products List</h5>
-                                            <!-- <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span> -->
+                                            <span>List of brands</span>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ if(isset($_SESSION['userId'])){
                                         <table id="products" class="table">
                                             <thead>
                                                 <tr>
-                                                <th class="nosort">Banner</th>
+                                                <th class="nosort">Brand</th>
                                                     <th>Title</th>
                                                     <th>Price</th>
                                                     <th>HSN</th>
@@ -298,7 +298,7 @@ if(isset($_SESSION['userId'])){
         <script src="js/datatables.js"></script>
         <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
         <script src="plugins/summernote/dist/summernote-bs4.min.js"></script>
-        <script src="js/layouts.js"></script>
+        <!-- <script src="js/layouts.js"></script> -->
         <script src="jscode/apis.js"></script>
         <script src="jscode/products.js"></script>
        
