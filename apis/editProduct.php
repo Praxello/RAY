@@ -40,7 +40,7 @@ if (isset($_POST['productId']) && isset($_POST['userId']) && isset($_POST['produ
         
     } else {
         $response = array(
-            'Message' => mysqli_error($conn) . " No Data Changee",
+            'Message' => mysqli_error($conn) . " No Data Change",
             'Responsecode' => 500
         );
     }

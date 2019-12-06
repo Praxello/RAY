@@ -86,7 +86,40 @@ const editProduct = productId => {
 const removeProduct = productId => {
     productId = productId.toString();
     if (productList.has(productId)) {
-
+        var product = productList.get(productId);
+        var listDelete = $('.list-delete');
+        listDelete.on('click', function() {
+            swal({
+                    title: "Are you sure?",
+                    text: "Do you really want to delete " + product.productTitle + "?",
+                    icon: "warning",
+                    buttons: ["Cancel", "Delete Now"],
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.ajax({
+                            url: url + 'deleteProduct.php',
+                            type: 'POST',
+                            data: { productId: productId },
+                            dataType: 'json',
+                            success: function(response) {
+                                if (response.Responsecode == 200) {
+                                    productList.delete(productId);
+                                    showProducts(productList);
+                                    swal({
+                                        title: "Deleted",
+                                        text: response.Message,
+                                        icon: "success",
+                                    });
+                                }
+                            }
+                        })
+                    } else {
+                        swal("The item is not deleted!");
+                    }
+                });
+        });
 
     }
 }

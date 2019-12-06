@@ -4,7 +4,7 @@ function loadDetails(product) {
     $('#productId').val(product.productId);
     $('#pId').val(product.productId);
     $('#productTitle').val(product.productTitle);
-    $('#productCategory').val(product.category);
+    $('#productCategory').val(product.category).trigger('change');
     $('#vendorId').val(product.userId).trigger('change');
     $('#price').val(product.price);
     $('#gst').val(product.GST);
@@ -42,12 +42,24 @@ $('#productform').on('submit', function(e) {
             dataType: 'json',
             success: function(response) {
                 if (response.Responsecode == 200) {
-                    alert(response.Message);
+                    swal({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: response.Message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     productList.set(response.Data.productId, response.Data);
                     showProducts(productList);
                     goback();
                 } else {
-                    alert(response.Message);
+                    swal({
+                        position: 'top-end',
+                        icon: 'warning',
+                        title: response.Message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }
             }
         });

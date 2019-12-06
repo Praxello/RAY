@@ -1,25 +1,22 @@
-vendorList(vendorsList);
-
-$('#productform').on('submit', function(e) {
+$('#vendorForm').on('submit', function(e) {
     e.preventDefault();
-    const productDetails = {
-        productTitle: $('#productTitle').val(),
-        category: $('#productCategory').val(),
-        userId: $('#vendorId').val(),
-        price: $('#price').val(),
-        GST: $('#gst').val(),
-        videoUrl: $('#videoLink').val(),
-        details: $('#productDesc').val()
+    const vendorDetails = {
+        fname: $('#fname').val(),
+        mname: $('#mname').val(),
+        lname: $('#lname').val(),
+        contactNumber: $('#contactNumber').val(),
+        emailId: $('#emailId').val(),
+        contactAddress: $('#contactAddress').val(),
+        pincode: $('#pincode').val(),
+        landline: $('#landline').val(),
+        birthDate: moment($('#dropper-max-year').val()).format('YYYY-MM-DD')
     };
-    var returnVal = $("#productform").valid();
+    var returnVal = $("#vendorForm").valid();
     if (returnVal) {
         $.ajax({
-            url: url + 'addProduct.php',
+            url: url + 'addVendor.php',
             type: 'POST',
-            data: new FormData(this),
-            cache: false,
-            contentType: false,
-            processData: false,
+            data: vendorDetails,
             dataType: 'json',
             success: function(response) {
                 if (response.Responsecode == 200) {
@@ -30,8 +27,8 @@ $('#productform').on('submit', function(e) {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    productList.set(response.Data.productId, response.Data);
-                    showProducts(productList);
+                    vendorsList.set(response.Data.userId, response.Data);
+                    showVendors(vendorsList);
                     goback();
                 } else {
                     swal({
