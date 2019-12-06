@@ -19,7 +19,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="productCategory">Category</label>
-                            <select  class="form-control" id="productCategory" name="category" placeholder="Category">
+                            <select  class="form-control select2" id="productCategory" name="category" placeholder="Category">
                                 <option value="0">Small scale</option>
                                 <option value="1">Large scale</option>
                             </select>

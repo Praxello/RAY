@@ -22,13 +22,12 @@ if(isset($_SESSION['userId'])){
         <link rel="stylesheet" href="plugins/ionicons/dist/css/ionicons.min.css">
         <link rel="stylesheet" href="plugins/icon-kit/dist/css/iconkit.min.css">
         <link rel="stylesheet" href="plugins/perfect-scrollbar/css/perfect-scrollbar.css">
-        <link rel="stylesheet" href=" plugins/summernote/dist/summernote-bs4.css">
         <link rel="stylesheet" href="plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="dist/css/theme.min.css">
+        <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
         <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
         <link rel="stylesheet" href="dist/css/dropzone.css">
         <link rel="stylesheet" href="dist/css/style.css">
-        <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
         
     </head>
 
@@ -51,8 +50,8 @@ if(isset($_SESSION['userId'])){
                                     <div class="page-header-title">
                                         <i class="ik ik-inbox bg-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Products List</h5>
-                                            <span>List of brands</span>
+                                            <h5>Inquiry List</h5>
+                                            <span>customer inquiry of a products</span>
                                         </div>
                                     </div>
                                 </div>
@@ -80,30 +79,28 @@ if(isset($_SESSION['userId'])){
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-sm-4">
-                                            <h3>Products List</h3>
+                                            <h3>Inquiry List</h3>
                                             </div>
                                             <div class="col-sm-4"></div>
                                             <div class="col-sm-4">
-                                            <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                          
                                             </div>
                                         </div>
                                     </div>
                                    
                                     </div>
                                     <div class="card-body">
-                                        <table id="products" class="table">
+                                        <table id="inquiry" class="table">
                                             <thead>
                                                 <tr>
                                                 <th class="nosort">Brand</th>
                                                     <th>Title</th>
-                                                    <th>Price</th>
-                                                    <th>HSN</th>
-                                                    <th>Video URL</th>
-                                                    <th>Details</th>
-                                                    <th class="nosort">&nbsp;</th>
+                                                    <th>Inquiry Date</th>
+                                                    <th>Customer</th>
+                                                    <th>Acknoledgement</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="productsData">
+                                            <tbody class="inquirydata">
                                                
                                                
                                                 
@@ -294,18 +291,15 @@ if(isset($_SESSION['userId'])){
         <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
         <script src="plugins/screenfull/dist/screenfull.js"></script>
-       
         <script src="plugins/datatables.net/js/jquery.dataTables.min.js"></script>
         <script src="plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script src="plugins/summernote/dist/summernote-bs4.min.js"></script>
         <script src="dist/js/theme.min.js"></script>
+       
         <script src="js/datatables.js"></script>
         <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
-      
-        <!-- <script src="js/layouts.js"></script> -->
-      
+        <script src="plugins/summernote/dist/summernote-bs4.min.js"></script>
         <script src="jscode/apis.js"></script>
-        <script src="jscode/products.js"></script>
+        <script src="jscode/inquiry.js"></script>
        
     </body>
 </html>
