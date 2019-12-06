@@ -41,7 +41,7 @@ if (isset($_POST['questionId']) && isset($_POST['userId']) && isset($_POST['cate
 
     } else {
         $response = array(
-            'Message' => mysqli_error($conn) . " failed",
+            'Message' => "No Update Data",
             'Responsecode' => 500
         );
     }

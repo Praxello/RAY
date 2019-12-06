@@ -3,41 +3,21 @@ const data = {
 };
 var uquestionId = null; //for updation
 var details = {};
-var questionList = new Map();
-const listQuestions = () => {
-    $.ajax({
-        url: url + 'getallquestionanswer.php',
-        type: 'POST',
-        dataType: 'json',
-        success: function(response) {
-            if (response.Data != null) {
-                const count = response.Data.length;
-                for (var i = 0; i < count; i++) {
-                    questionList.set(response.Data[i].questionId, response.Data[i]);
-                }
-                showquestion(questionList);
-            }
-        }
-    });
-}
 
-const showquestion = questionList => {
+var categoryList = new Map(); // category Map
+var categorytblList = new Map();  // Only for table category shows
+const showcategory = categorytblList => {
     $('#quiz').dataTable().fnDestroy();
     $('.vendorData').empty();
     var tblData = '';
-    for (let k of questionList.keys()) {
-        let question = questionList.get(k);
-        console.log(question);
-        tblData += '<tr><td>' + question.question + '</td>';
-        tblData += '<td>' + question.categoryname + '</td>';
-        tblData += '<td>' + question.option1 + '</td>';
-        tblData += '<td>' + question.option2 + '</td>';
-        tblData += '<td>' + question.option3 + '</td>';
-        tblData += '<td>' + question.option4 + '</td>';
-        tblData += '<td>' + question.correctoption + '</td>';
+    for (let k of categorytblList.keys()) {
+        let category = categorytblList.get(k);
+        // console.log(category);
+        tblData += '<tr><td>' + category.categoryname + '</td>';
+        tblData += '<td>' + category.countquestion + '</td>';
+
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editquestion(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
-        tblData += '<a href="#" class="list-delete" onclick="removequestion(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
         tblData += '</div></td></tr>';
     }
     $('.vendorData').html(tblData);
@@ -46,33 +26,86 @@ const showquestion = questionList => {
         retrieve: true,
         bPaginate: $('tbody tr').length > 10,
         order: [],
-        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6, 7] }],
+        columnDefs: [{ orderable: false, targets: [0, 1, 2] }],
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf'],
         destroy: true
     });
 }
-listQuestions();
+const listcategorywise = () => {
+    $.ajax({
+        url: url + 'questioncategorywise.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+          // console.log(response);
+            if (response.Data != null) {
+                const count = response.Data.length;
+                for (var i = 0; i < count; i++) {
+                    categorytblList.set(response.Data[i].categoryId, response.Data[i]);
+                }
+                showcategory(categorytblList);
+            }
+        }
+    });
+}
+listcategorywise();
+const listcategory = () => {
+    $.ajax({
+        url: url + 'getallcategory.php',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+            if (response.Data != null) {
+                const count = response.Data.length;
+                for (var i = 0; i < count; i++) {
+                    categoryList.set(response.Data[i].categoryId, response.Data[i]);
+                }
 
-const editquestion = questionId => {
-    questionId = questionId.toString();
-    if (questionList.has(questionId)) {
+            }
+        }
+    });
+}
+listcategory();
+
+
+
+
+const editquestion = categoryId => {
+    categoryId = categoryId.toString();
+    if (categorytblList.has(categoryId)) {
         $('.questionlist').hide();
         $('#newquestion').load('edit_question.php');
-        const question = questionList.get(questionId);
-        uquestionId = questionId;
-        details = question;
+        const category = categorytblList.get(categoryId);
+        uquestionId = categoryId;
+        details =category;
     } else {
-        alert('something goes wrong');
+        swal('something goes wrong');
     }
 }
 
-const removequestion = vendorId => {
-    vendorId = vendorId.toString();
-    if (questionList.has(vendorId)) {
-        $('.questionlist').hide();
-        $('#newquestion').load('add_question.php');
-    }
+const removequestion = questionId => {
+  // console.log(questionId);
+  $.ajax({
+      url: url + 'deletequestionanswer.php',
+      type: 'POST',
+      dataType: 'json',
+      data:{
+        questionId:questionId
+      },
+      success: function(response) {
+        // console.log(response);
+        if(response.Responsecode==200){
+          categorytblList.clear(uquestionId);
+          listcategorywise();
+          goback();
+          swal(response.Message);
+        }
+
+      }
+  });
+
+
 }
 
 function addQuestion() {

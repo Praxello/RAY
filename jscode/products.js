@@ -91,7 +91,7 @@ const removeProduct = productId => {
         listDelete.on('click', function() {
             swal({
                     title: "Are you sure?",
-                    text: "Do you really want to delete " + product.productTitle + "?",
+                    text: "Do you really want to delete ?",
                     icon: "warning",
                     buttons: ["Cancel", "Delete Now"],
                     dangerMode: true,

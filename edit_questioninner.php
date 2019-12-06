@@ -1,21 +1,18 @@
 <div class="row">
     <div class="card">
         <div class="card-header">
-            <h3>Add Question Details</h3></div>
+            <h3>Question List</h3></div>
 
         <div class="card-body">
             <form class="forms-sample" id="questionForm" method="POST">
-
-
-                    <div class="row">
-                      <div class="col-md-12">
-                          <div class="form-group">
-                              <label for="exampleTextarea">Question </label>
-                              <textarea class="form-control" id="question" rows="3"></textarea>
-                          </div>
-                      </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="exampleTextarea">Question </label>
+                            <textarea class="form-control" id="question" rows="3"></textarea>
+                        </div>
                     </div>
-
+                </div>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -32,7 +29,6 @@
                         </div>
                     </div>
 
-
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -48,7 +44,6 @@
                             <input type="text" class="form-control" id="option4" placeholder="Option 4">
                         </div>
                     </div>
-
 
                 </div>
                 <div class="row">
@@ -87,12 +82,14 @@
                 </div>
 
                 <input type="submit" class="btn btn-primary mr-2" value="Submit">
-                <button class="btn btn-light" onclick="goback()">Cancel</button>
+                <button class="btn btn-light" onclick="goback1()">Cancel</button>
             </form>
         </div>
     </div>
 </div>
-<script>
+
+<script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+<script type="text/javascript">
 function loadcategory()
 {
 var html = '';
@@ -103,33 +100,49 @@ for(let k of categoryList.keys()){
 $("#categoryId").html(html);
 }
 loadcategory();
-$('#questionForm').on('submit', function(e) {
-    e.preventDefault();
-    const questionDetails = {
-        userId: 1,
-        categoryId: $('#categoryId').val(),
-        question: $('#question').val(),
-        option1: $('#option1').val(),
-        option2: $('#option2').val(),
-        option3: $('#option3').val(),
-        option4: $('#option4').val(),
-        correctoption: $('#correctoption').val(),
-        ansdes:$('#ansdesc').val()
-    };
-    $.ajax({
-        url: url + 'addquestionanswer.php',
-        type: 'POST',
-        data: questionDetails,
-        dataType: 'json',
-        success: function(response) {
-            if (response.Responsecode == 200) {
-                swal(response.Message);
-
-                listcategorywise();
-                goback();
+function loadquestionDetails(product) {
+  // console.log("category id"+uquestionId);
+    $('#question').val(product.question);
+    $('#option1').val(product.option1);
+    $('#option2').val(product.option2);
+    $('#option3').val(product.option3);
+    $('#option4').val(product.option4);
+    $('#ansdesc').val(product.ansdes);
+    $('#categoryId').val(product.categoryId).trigger('change');
+    $('#correctoption').val(product.correctoption).trigger('change');
+}
+loadquestionDetails(questiondetails);
+    $('#questionForm').on('submit', function(e) {
+        e.preventDefault();
+        const questionDetails = {
+            questionId:spuquestionId,
+            userId: 1,
+            categoryId: $('#categoryId').val(),
+            question: $('#question').val(),
+            option1: $('#option1').val(),
+            option2: $('#option2').val(),
+            option3: $('#option3').val(),
+            option4: $('#option4').val(),
+            correctoption: $('#correctoption').val(),
+            ansdes: $('#ansdesc').val()
+        };
+        $.ajax({
+            url: url + 'editquestionanswer.php',
+            type: 'POST',
+            data: questionDetails,
+            dataType: 'json',
+            success: function(response) {
+                if (response.Responsecode == 200) {
+                    swal(response.Message);
+                    goback1();
+                }
             }
-        }
+        });
     });
-});
+function goback1(){
+  // console.log(uquestionId);
+  questionList(uquestionId);
+$('#newquestion').load('edit_question.php');
+
+}
 </script>
-<script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>

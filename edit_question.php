@@ -1,237 +1,118 @@
+<div id="editquestion"></div>
+
 <div class="row">
-    <div class="card">
-        <div class="card-header">
-<<<<<<< HEAD
-            <h3>Add Question Details</h3></div>
+  <div class="col-md-12">
+      <div class="card task-board">
+          <div class="card-header">
+              <h3><span id="categoryname"></span> Question List</h3>
+              <div class="card-header-right" style="margin-right: 100px;">
+                  <button class="btn btn-primary" type="button" onclick="goback()">Back</button>
+              </div>
+              <div class="card-header-right">
 
-        <div class="card-body">
-            <form class="forms-sample" id="questionForm" method="POST">
+                  <ul class="list-unstyled card-option">
+                      <li><i class="ik ik-chevron-left action-toggle"></i></li>
+                      <li><i class="ik ik-chevron-left action-toggle"></i></li>
+                      <li><i class="ik ik-rotate-cw reload-card" data-loading-effect="pulse"></i></li>
+                      <li><i class="ik ik-minus minimize-card"></i></li>
+                      <li><i class="ik ik-x close-card"></i></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="card-body todo-task">
+              <div >
+                  <ol class="dd-list" id="questionlist">
 
 
-                    <div class="row">
-                      <div class="col-md-12">
-                          <div class="form-group">
-                              <label for="exampleTextarea">Question </label>
-                              <textarea class="form-control" id="question" rows="3"></textarea>
-                          </div>
-                      </div>
-                    </div>
+                  </ol>
+              </div>
 
-=======
-            <h3>Update Question Details</h3></div>
+          </div>
+      </div>
+  </div>
 
-        <div class="card-body">
-            <form class="forms-sample" id="questionForm" method="POST">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="exampleTextarea">Question </label>
-                            <textarea class="form-control" id="question" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-<<<<<<< HEAD
-                            <label for="exampleInputMobileno">Option 1</label>
-=======
-                            <label for="exampleInputMobileno">Option A</label>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-                            <input type="text" class="form-control" id="option1" placeholder="Option 1">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-<<<<<<< HEAD
-                            <label for="exampleInputEmail3">Option 2</label>
-=======
-                            <label for="exampleInputEmail3">Option B</label>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-                            <input type="text" class="form-control" id="option2" placeholder="Option 2">
-                        </div>
-                    </div>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-<<<<<<< HEAD
-                            <label for="exampleInputMobileno">Option 3</label>
-=======
-                            <label for="exampleInputMobileno">Option C</label>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-                            <input type="text" class="form-control" id="option3" placeholder="Option 3">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-<<<<<<< HEAD
-                            <label for="exampleInputEmail3">Option 4</label>
-=======
-                            <label for="exampleInputEmail3">Option D</label>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-                            <input type="text" class="form-control" id="option4" placeholder="Option 4">
-                        </div>
-                    </div>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="exampleTextarea">Answer Description</label>
-                            <textarea class="form-control" id="ansdesc" rows="3" placeholder="Short Answer Description"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="exampleSelectPincode">Category</label>
-                            <select class="form-control select2" id="categoryId">
-<<<<<<< HEAD
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
-                                <option value="4">Option 4</option>
-=======
-                                <option value="1">Option A</option>
-                                <option value="2">Option B</option>
-                                <option value="3">Option C</option>
-                                <option value="4">Option D</option>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-
-                            </select>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="exampleSelectLandline">Correct Option</label>
-                            <select class="form-control select2" id="correctoption">
-<<<<<<< HEAD
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
-                                <option value="4">Option 4</option>
-=======
-                                <option value="1">Option A</option>
-                                <option value="2">Option B</option>
-                                <option value="3">Option C</option>
-                                <option value="4">Option D</option>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
-
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <input type="submit" class="btn btn-primary mr-2" value="Submit">
-                <button class="btn btn-light" onclick="goback()">Cancel</button>
-            </form>
-        </div>
-    </div>
 </div>
+<script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+<script src=" plugins/nestable/jquery.nestable.js"></script>
+<script src=" dist/js/theme.min.js"></script>
+<script src=" js/taskboard.js"></script>
+
 <script>
-<<<<<<< HEAD
-function loadDetails(details){
-        // console.log(details);
-        $('#categoryId').val(details.categoryId);
-        $('#question').val(details.question);
-        $('#option1').val(details.option1);
-        $('#option2').val(details.option2);
-        $('#option3').val(details.option3);
-        $('#option4').val(details.option4);
-        $('#correctoption').val(details.correctoption);
-        $('#ansdesc').val(details.ansdes);
-  }
-loadDetails(details);
-$('#questionForm').on('submit', function(e) {
-    e.preventDefault();
-    const vendorDetails = {
-      userId: 1,
-      questionId:questionId,
-      categoryId: $('#categoryId').val(),
-      question: $('#question').val(),
-      option1: $('#option1').val(),
-      option2: $('#option2').val(),
-      option3: $('#option3').val(),
-      option4: $('#option4').val(),
-      correctoption: $('#correctoption').val(),
-      ansdes:$('#ansdesc').val()
-    };
-    $.ajax({
-        url: url + 'editquestionanswer.php',
-        type: 'POST',
-        data: vendorDetails,
-        dataType: 'json',
-        success: function(response) {
-            if (response.Responsecode == 200) {
-               console.log(response.Data);
-                if(questionList.has(response.Data.questionId)){
-                    questionList.delete(response.Data.questionId);
-                }
-                questionList.set(response.Data.questionId, response.Data);
-                showquestion(questionList);
-                goback();
-            }else{
-                alert(response.Message);
-            }
-        }
-    });
-});
-</script>
-=======
-    function loadDetails(product) {
-    $('#question').val(product.question);
-    $('#option1').val(product.option1);
-    $('#option2').val(product.option2);
-    $('#option3').val(product.option3);
-    $('#option4').val(product.option4);
-    $('#ansdesc').val(product.ansdes);
-    $('#categoryId').val(product.categoryId).trigger('change');
-    $('#correctoption').val(product.correctoption).trigger('change');
+var questiondetails = {};
+var spuquestionId = null; //for updation
+var questionList1 = new Map();
+function editquestioninner(questionId ) {
+    questionId = questionId.toString();
+    if (questionList1.has(questionId)) {
+        $('.questionlist').hide();
+        $('#newquestion').load('edit_questioninner.php');
+        const spquestion = questionList1.get(questionId);
+        spuquestionId = questionId;
+        questiondetails =spquestion;
+    } else {
+        swal('something goes wrong');
+    }
 }
-loadDetails(details);
-    $('#questionForm').on('submit', function(e) {
-        e.preventDefault();
-        const questionDetails = {
-            questionId:uquestionId,
-            userId: 1,
-            categoryId: $('#categoryId').val(),
-            question: $('#question').val(),
-            option1: $('#option1').val(),
-            option2: $('#option2').val(),
-            option3: $('#option3').val(),
-            option4: $('#option4').val(),
-            correctoption: $('#correctoption').val(),
-            ansdes: $('#ansdesc').val()
-        };
-        $.ajax({
-            url: url + 'editquestionanswer.php',
-            type: 'POST',
-            data: questionDetails,
-            dataType: 'json',
-            success: function(response) {
-                if (response.Responsecode == 200) {
-                    console.log(response.Data);
-                    questionList.set(response.Data.userId, response.Data);
-                    showquestion(questionList);
-                    goback();
-                }
-            }
-        });
-    });
+
+function questionList(categoryId){
+  $.ajax({
+      url: url + 'getallquestionanswerbyid.php',
+      type: 'POST',
+      dataType: 'json',
+      data:{
+        categoryId:categoryId
+      },
+      success: function(response) {
+         // console.log(response);
+        var questionhtml='';
+          if (response.Data != null) {
+              const count = response.Data.length;
+              for (var i = 0; i < count; i++) {
+                questionList1.set(response.Data[i].questionId, response.Data[i]);
+                questionhtml+='<li class="dd-item" data-id="'+response.Data[i].questionId+'">';
+                questionhtml+='    <div class="dd-handle">';
+                questionhtml+='       <a href="#demo'+(i+1)+'" data-toggle="collapse" > <h6 style="color: #9d1111;font-weight: bolder;">'+(i+1)+' '+response.Data[i].question;
+                questionhtml+=' </h6>';
+                questionhtml+=' </a>';
+                // questionhtml+'<div>';
+                questionhtml+='<button type="button" class="btn btn-link"  style="float:right;" class="list-delete" onclick="removequestion('+response.Data[i].questionId+')"><i class="ik ik-trash-2"></i></button>';
+                questionhtml+='<button type="button" class="btn btn-link" style="float:right;" onclick="editquestioninner('+response.Data[i].questionId+')" ><i class="ik ik-edit-2"></i></button>';
+
+                questionhtml+=' </div>';
+
+                questionhtml+='        <div id="demo'+(i+1)+'" class="collapse">';
+                  questionhtml+='<div class="row">';
+                  questionhtml+='<div class="col-sm-6">';
+                  questionhtml+=response.Data[i].option1;
+                  questionhtml+='</div>';
+                  questionhtml+='<div class="col-sm-6">';
+                  questionhtml+=response.Data[i].option2;
+                  questionhtml+='</div>';
+                  questionhtml+='</div>';
+                  questionhtml+='<div class="row">';
+                  questionhtml+='<div class="col-sm-6">';
+                  questionhtml+=response.Data[i].option3;
+                  questionhtml+='</div>';
+                  questionhtml+='<div class="col-sm-6">';
+                  questionhtml+=response.Data[i].option4;
+                  questionhtml+='</div>';
+                  questionhtml+='</div>';
+                  questionhtml+='<div class="row">';
+                  questionhtml+='<div class="col-sm-12" style="color: blue;font-weight: bold;">';
+                  questionhtml+=response.Data[i].ansdes;
+                  questionhtml+='</div>';
+                  questionhtml+='</div>';
+                questionhtml+='</div>';
+                questionhtml+='    </div>';
+                questionhtml+='</li>';
+              }
+
+              $("#categoryname").html(response.Data[0].categoryname);
+              $("#questionlist").html(questionhtml);
+          }
+      }
+  });
+}
+questionList(uquestionId);
+
 </script>
->>>>>>> 0422c965dc7fdf0b4a5152c22b442b82d1425bfd
