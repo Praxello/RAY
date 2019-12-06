@@ -1,3 +1,8 @@
+<style>
+.error{
+    color: red;
+}
+</style>
 <div class="row">
     <div class="card">
         <div class="card-header">
@@ -9,7 +14,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="exampleTextarea">Question </label>
-                            <textarea class="form-control" id="question" rows="3"></textarea>
+                            <textarea class="form-control" id="question" name="question" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -18,14 +23,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputMobileno">Option A</label>
-                            <input type="text" class="form-control" id="option1" placeholder="Option 1">
+                            <input type="text" class="form-control" id="option1" name="option1" placeholder="Option 1">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail3">Option B</label>
-                            <input type="text" class="form-control" id="option2" placeholder="Option 2">
+                            <input type="text" class="form-control" id="option2"  name="option2" placeholder="Option 2">
                         </div>
                     </div>
 
@@ -34,14 +39,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputMobileno">Option C</label>
-                            <input type="text" class="form-control" id="option3" placeholder="Option 3">
+                            <input type="text" class="form-control" id="option3"  name="option3" placeholder="Option 3">
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="exampleInputEmail3">Option D</label>
-                            <input type="text" class="form-control" id="option4" placeholder="Option 4">
+                            <input type="text" class="form-control" id="option4"  name="option4" placeholder="Option 4">
                         </div>
                     </div>
 
@@ -56,7 +61,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="exampleSelectPincode">Category</label>
-                            <select class="form-control select2" id="categoryId">
+                            <select class="form-control select2" id="categoryId" name="categoryId">
                                 <!-- <option value="1">Option A</option>
                                 <option value="2">Option B</option>
                                 <option value="3">Option C</option>
@@ -70,7 +75,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="exampleSelectLandline">Correct Option</label>
-                            <select class="form-control select2" id="correctoption">
+                            <select class="form-control select2" id="correctoption" name="correctoption">
                                 <option value="1">Option A</option>
                                 <option value="2">Option B</option>
                                 <option value="3">Option C</option>
@@ -88,6 +93,8 @@
     </div>
 </div>
 
+<script src="js/jquery.validate.js"></script>
+<script src="jscode/quiz_validation.js"></script>
 <script src="plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
 <script type="text/javascript">
 function loadcategory()
@@ -126,6 +133,8 @@ loadquestionDetails(questiondetails);
             correctoption: $('#correctoption').val(),
             ansdes: $('#ansdesc').val()
         };
+        var retVal = $('#questionForm').valid();
+        if(retVal){
         $.ajax({
             url: url + 'editquestionanswer.php',
             type: 'POST',
@@ -138,6 +147,7 @@ loadquestionDetails(questiondetails);
                 }
             }
         });
+    }
     });
 function goback1(){
   // console.log(uquestionId);
