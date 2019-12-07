@@ -58,7 +58,7 @@ if(isset($_SESSION['userId'])){
                                     <nav class="breadcrumb-container" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="../index.html"><i class="ik ik-home"></i></a>
+                                                <a href="products.php"><i class="ik ik-home"></i></a>
                                             </li>
                                             <li class="breadcrumb-item">
                                                 <a href="#">Tables</a>
