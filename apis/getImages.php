@@ -1,7 +1,7 @@
 <?php
 header('Content-type: text/json'); //3
 header('Content-type: application/json');
-include "../../connection.php";
+include "../connection.php";
 mysqli_set_charset($conn, 'utf8');
 $response    = null;
 $records     = null;

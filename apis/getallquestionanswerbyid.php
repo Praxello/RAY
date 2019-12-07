@@ -1,12 +1,12 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
-include "../../connection.php";
+include "../connection.php";
 mysqli_set_charset($conn, 'utf8');
 $response = null;
 $records  = null;
 extract($_POST);
-if(isset($_POST['userId'])){
+if(isset($_POST['categoryId'])){
     $sql      = "SELECT * FROM QuestionAnswerMaster qam left join categorymaster cm on qam.categoryId=cm.categoryId WHERE qam.categoryId=$categoryId";
 }else{
     $sql = "SELECT * FROM QuestionAnswerMaster qam left join categorymaster cm on qam.categoryId=cm.categoryId WHERE qam.categoryId=$categoryId";
