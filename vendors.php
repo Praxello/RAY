@@ -148,6 +148,6 @@ if(isset($_SESSION['userId'])){
 </html>
 <?php 
 }else{
-    header('Location:login.html');
+    header('Location:index.php');
 }
 ?>
