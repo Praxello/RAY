@@ -48,7 +48,7 @@ if(isset($_SESSION['userId'])){
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="ik ik-inbox bg-blue"></i>
+                                        <i class="ik phone-forwarded ik-phone-forwarded bg-blue"></i>
                                         <div class="d-inline">
                                             <h5>Inquiry List</h5>
                                             <span>customer inquiry of a products</span>

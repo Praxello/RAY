@@ -76,7 +76,7 @@
                         <div class="form-group">
                             <label for="exampleSelectLandline">Correct Option</label>
                             <select class="form-control select2" id="correctoption" name="correctoption">
-                                <option value="1">Option A</option>
+                                <option value="1">Option A</option> 
                                 <option value="2">Option B</option>
                                 <option value="3">Option C</option>
                                 <option value="4">Option D</option>

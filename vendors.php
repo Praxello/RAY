@@ -47,7 +47,7 @@ if(isset($_SESSION['userId'])){
                             <div class="row align-items-end">
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
-                                        <i class="ik ik-inbox bg-blue"></i>
+                                        <i class="ik user ik-user bg-blue"></i>
                                         <div class="d-inline">
                                             <h5>Vendors</h5>
                                             <span>List of vendors</span>
