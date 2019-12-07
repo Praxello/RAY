@@ -8,12 +8,13 @@ if(isset($_SESSION['userId'])){
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Data Tables | ThemeKit - Admin Template</title>
+        <title>Inquiry | Radiology - Admin Template</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+       
+    <link rel="icon" href="img/brand.png" type="image/x-icon" />
 
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
         
@@ -59,7 +60,7 @@ if(isset($_SESSION['userId'])){
                                     <nav class="breadcrumb-container" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="../index.html"><i class="ik ik-home"></i></a>
+                                                <a href="products.php"><i class="ik ik-home"></i></a>
                                             </li>
                                             <li class="breadcrumb-item">
                                                 <a href="#">Tables</a>
@@ -95,7 +96,7 @@ if(isset($_SESSION['userId'])){
                                                 <tr>
                                                 <th class="nosort">Brand</th>
                                                     <th>Title</th>
-                                                    <th>Inquiry Date</th>
+                                                    <th>Date of Inquiry</th>
                                                     <th>Customer</th>
                                                     <th>Acknoledgement</th>
                                                 </tr>
