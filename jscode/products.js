@@ -35,9 +35,9 @@ const showProducts = productList => {
             activeLable = '<td><label class="badge badge-success">active</label></td>';
         }
         var editData = '<a href="#" onclick="editProduct(' + (k) + ')" title="Edit product details"><i class="ik ik-edit-2"></i></a>';
-        if (data.roleId == 1) {
-            editData = '';
-        }
+        // if (data.roleId == 1) {
+        //     editData = '';
+        // }
         tblData += '<tr><td><img src="' + url + 'upload/' + products.productId + '.jpg" class="table-user-thumb" alt="Image"></td>';
         tblData += '<td>' + products.productTitle + '</td>';
         tblData += '<td>' + products.price + '</td>';
