@@ -15,10 +15,15 @@
                         <div class="nav-container">
                             <nav id="main-menu-navigation" class="navigation-main">
                                 <div class="nav-lavel">Radiology Web</div>
-                               
+                               <?php
+                               if($roleId == 1){
+                                   ?>
                                 <div class="nav-item">
                                     <a href="vendors.php"><i class="ik  user ik-user"></i><span>Vendors</span> <span class="badge badge-success"></span></a>
                                 </div>
+                                <?php 
+                               }
+                               ?>
                                 <div class="nav-item">
                                     <a href="products.php"><i class="ik shopping-bag ik-shopping-bag"></i><span>Products</span> <span class="badge badge-success"></span></a>
                                 </div>

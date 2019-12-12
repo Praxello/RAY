@@ -58,7 +58,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="productDesc">Textarea</label>
+                            <label for="productDesc">Product Details</label>
                             <textarea class="form-control" id="productDesc" name="details" rows="4"></textarea>
                         </div>
                     </div>
@@ -75,8 +75,20 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button class="btn btn-light" type="button" onclick="goback()">Cancel</button>
+                <button type="submit" class="btn btn-primary mr-2 hideit">Submit</button>
+                <button class="btn btn-light hideit" type="button" onclick="goback()">Cancel</button>
+                <button class="btn btn-light showit" type="button" onclick="back()" style="display: none;">Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row" id="addProductImages" style="display: none;">
+    <div class="card">
+        <div class="card-header">
+            <h3>Add upto 3 product images</h3></div>
+        <div class="card-body">
+            <form action="apis/upload.php" class="dropzone" id="myAwesomeDropzone">
+                <input type="hidden" id="productId" name="productId" />
             </form>
         </div>
     </div>
@@ -86,3 +98,4 @@
 <script src="jscode/vendorList.js"></script>
 <script src="jscode/product_validation.js"></script>
 <script src="jscode/addproduct.js"> </script>
+<script src="jscode/dropzoneProduct.js"></script>

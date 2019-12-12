@@ -6,17 +6,17 @@ mysqli_set_charset($conn, 'utf8');
 $response    = null;
 $records     = null;
 $result      = array();
-$storeFolder = 'upload';
+$storeFolder = 'upload/productImages';
 $ds          = DIRECTORY_SEPARATOR;
 extract($_GET);
 if (isset($_GET['productId'])) {
-    $academicQuery = mysqli_query($conn, "SELECT photoUrl FROM ProductImages where productId = $productId");
+    $academicQuery = mysqli_query($conn, "SELECT imageId FROM ProductImages where productId = $productId");
     if ($academicQuery != null) {
         $academicAffected = mysqli_num_rows($academicQuery);
         if ($academicAffected > 0) {
             while ($academicResults = mysqli_fetch_assoc($academicQuery)) {
-                $obj['name'] = $academicResults['photoUrl'];
-                $obj['size'] = filesize($storeFolder . $ds . $academicResults['photoUrl']);
+                $obj['name'] = $academicResults['imageId'].'.jpg';
+                $obj['size'] = filesize($storeFolder . $ds . $academicResults['imageId'].'.jpg');
                 $records[]   = $obj;
             }
             $response = array(

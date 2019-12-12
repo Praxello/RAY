@@ -68,7 +68,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="productDesc">Textarea</label>
+                            <label for="productDesc">Product Details</label>
                             <textarea class="form-control" id="productDesc" name="details" rows="4"></textarea>
                         </div>
                     </div>

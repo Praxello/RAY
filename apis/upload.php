@@ -5,7 +5,7 @@ include "../connection.php";
 mysqli_set_charset($conn, 'utf8');
 $response   = null;
 $records    = null;
-$target_dir = "upload/"; // Upload directory
+$target_dir = "upload/productImages/"; // Upload directory
 $ds         = DIRECTORY_SEPARATOR;
 $request    = 1;
 extract($_POST);
@@ -17,12 +17,13 @@ if (isset($_POST['productId'])) {
     if ($request == 1) {
         $target_file = $target_dir . basename($_FILES["file"]["name"]);
         $filename    = $_FILES['file']['name'];
-        $sql         = "INSERT INTO  ProductImages(productId,photoUrl) VALUES($productId,'$filename')";
+        $sql         = "INSERT INTO  ProductImages(productId) VALUES($productId)";
         $query       = mysqli_query($conn, $sql);
         
         $rowsAffected = mysqli_affected_rows($conn);
         if ($rowsAffected == 1) {
-            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_dir . $_FILES['file']['name'])) {
+            $imageId     = $conn->insert_id;
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_dir . $imageId.'.jpg')) {
                 $response = array(
                     'Message' => "Image added Successfully",
                     "Data" => $records,
@@ -48,7 +49,7 @@ if (isset($_POST['productId'])) {
     if ($request == 2) {
         $file         = $_POST['name'];
         $filename     = $target_dir . $_POST['name'];
-        $sql          = "DELETE FROM  ProductImages WHERE productId=$productId AND photoUrl = '$file'";
+        $sql          = "DELETE FROM  ProductImages WHERE productId=$productId AND imageId = '$file'";
         $query        = mysqli_query($conn, $sql);
         $rowsAffected = mysqli_affected_rows($conn);
         if ($rowsAffected == 1) {

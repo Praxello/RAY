@@ -32,12 +32,17 @@ const showVendors = vendorsList => {
     var tblData = '';
     for (let k of vendorsList.keys()) {
         let vendors = vendorsList.get(k);
+        var activeLable = '<td><label class="badge badge-danger">inactive</label></td>';
+        if (vendors.isActive == 1) {
+            activeLable = '<td><label class="badge badge-success">active</label></td>';
+        }
         var bdate = moment(vendors.birthDate).format("dddd, MMMM Do YYYY");
         tblData += '<tr><td>' + vendors.contactNumber + '</td>';
         tblData += '<td>' + vendors.fname + ' ' + vendors.lname + '</td>';
         tblData += '<td>' + vendors.emailId + '</td>';
         tblData += '<td>' + bdate + '</td>';
         tblData += '<td>' + vendors.contactAddress + '</td>';
+        tblData += activeLable;
         tblData += '<td><div class="table-actions">';
         tblData += '<a href="#" onclick="editVendor(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
         tblData += '<a href="#" class="list-delete" onclick="removeVendor(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
@@ -50,7 +55,7 @@ const showVendors = vendorsList => {
         paging: true,
         bPaginate: $('tbody tr').length > 10,
         order: [],
-        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5] }],
+        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6] }],
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf'],
         destroy: true
@@ -71,11 +76,47 @@ const editVendor = vendorId => {
     }
 }
 
+
 const removeVendor = vendorId => {
     vendorId = vendorId.toString();
     if (vendorsList.has(vendorId)) {
-        $('.vendorlist').hide();
-        $('#newvendor').load('add_vendor.php');
+        var vendor = vendorsList.get(vendorId);
+        var listDelete = $('.list-delete');
+        swal({
+                title: "Are you sure?",
+                text: "Do you really want to Activate ?",
+                icon: "warning",
+                buttons: ["Cancel", "Activate Now"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: url + 'deleteVendor.php',
+                        type: 'POST',
+                        data: { vendorId: vendorId },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.Responsecode == 200) {
+                                if (vendor.isActive == '0') {
+                                    vendor.isActive = '1';
+                                } else {
+                                    vendor.isActive = '0';
+                                }
+                                vendorsList.set(vendorId, vendor);
+                                showVendors(vendorsList);
+                                swal({
+                                    title: "Deleted",
+                                    text: response.Message,
+                                    icon: "success",
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    swal("The Vendor is not deleted!");
+                }
+            });
     }
 }
 

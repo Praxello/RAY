@@ -29,6 +29,7 @@ if(isset($_SESSION['userId'])){
         <link rel="stylesheet" href="plugins/select2/dist/css/select2.min.css">
         <link rel="stylesheet" href="dist/css/dropzone.css">
         <link rel="stylesheet" href="dist/css/style.css">
+        <link rel="stylesheet" href="loader.css">
         <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
         
     </head>
@@ -85,7 +86,12 @@ if(isset($_SESSION['userId'])){
                                             </div>
                                             <div class="col-sm-4"></div>
                                             <div class="col-sm-4">
-                                            <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                                <?php
+                                                if($roleId != 1){
+                                                   ?> 
+                                                    <button type="button" class="btn btn-primary" style="float: right;" onclick="addProduct();" >New Product</button>
+                                                <?php } ?>
+                                           
                                             </div>
                                         </div>
                                     </div>
@@ -101,6 +107,7 @@ if(isset($_SESSION['userId'])){
                                                     <th>HSN</th>
                                                     <th>Video URL</th>
                                                     <th>Details</th>
+                                                    <th>Status</th>
                                                     <th class="nosort">&nbsp;</th>
                                                 </tr>
                                             </thead>
@@ -206,6 +213,7 @@ if(isset($_SESSION['userId'])){
                     </div>
                 </footer> -->
                 <?php include 'footer.php';?>
+                <div id="loader"></div>
             </div>
         </div>
         
@@ -303,9 +311,7 @@ if(isset($_SESSION['userId'])){
         <script src="dist/js/theme.min.js"></script>
         <script src="js/datatables.js"></script>
         <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
-      
-        <!-- <script src="js/layouts.js"></script> -->
-      
+        <script src="jscode/loader.js"></script>
         <script src="jscode/apis.js"></script>
         <script src="jscode/products.js"></script>
        

@@ -30,15 +30,24 @@ const showProducts = productList => {
     var tblData = '';
     for (let k of productList.keys()) {
         let products = productList.get(k);
+        var activeLable = '<td><label class="badge badge-danger">inactive</label></td>';
+        if (products.isActive == 1) {
+            activeLable = '<td><label class="badge badge-success">active</label></td>';
+        }
+        var editData = '<a href="#" onclick="editProduct(' + (k) + ')" title="Edit product details"><i class="ik ik-edit-2"></i></a>';
+        if (data.roleId == 1) {
+            editData = '';
+        }
         tblData += '<tr><td><img src="' + url + 'upload/' + products.productId + '.jpg" class="table-user-thumb" alt="Image"></td>';
         tblData += '<td>' + products.productTitle + '</td>';
         tblData += '<td>' + products.price + '</td>';
         tblData += '<td>' + products.GST + '</td>';
         tblData += '<td><a href="' + products.videoUrl + '" target="_blank">' + products.videoUrl + '</a></td>';
         tblData += '<td>' + products.details + '</td>';
+        tblData += activeLable;
         tblData += '<td><div class="table-actions">';
-        tblData += '<a href="#" onclick="editProduct(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
-        tblData += '<a href="#" class="list-delete" onclick="removeProduct(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
+        tblData += editData;
+        tblData += '<a href="#" class="list-delete" onclick="removeProduct(' + (k) + ')" title="Active inactive product"><i class="ik ik-trash-2"></i></a>';
         tblData += '</div></td></tr>';
     }
     $('.productsData').html(tblData);
@@ -47,7 +56,7 @@ const showProducts = productList => {
         retrieve: true,
         bPaginate: $('tbody tr').length > 10,
         order: [],
-        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6] }],
+        columnDefs: [{ orderable: false, targets: [0, 1, 2, 3, 4, 5, 6, 7] }],
         dom: 'Bfrtip',
         buttons: ['copy', 'csv', 'excel', 'pdf'],
         destroy: true
@@ -88,39 +97,43 @@ const removeProduct = productId => {
     if (productList.has(productId)) {
         var product = productList.get(productId);
         var listDelete = $('.list-delete');
-        listDelete.on('click', function() {
-            swal({
-                    title: "Are you sure?",
-                    text: "Do you really want to delete ?",
-                    icon: "warning",
-                    buttons: ["Cancel", "Delete Now"],
-                    dangerMode: true,
-                })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        $.ajax({
-                            url: url + 'deleteProduct.php',
-                            type: 'POST',
-                            data: { productId: productId },
-                            dataType: 'json',
-                            success: function(response) {
-                                if (response.Responsecode == 200) {
-                                    productList.delete(productId);
-                                    showProducts(productList);
-                                    swal({
-                                        title: "Deleted",
-                                        text: response.Message,
-                                        icon: "success",
-                                    });
-                                }
-                            }
-                        })
-                    } else {
-                        swal("The item is not deleted!");
-                    }
-                });
-        });
 
+        swal({
+                title: "Are you sure?",
+                text: "Do you really want to Activate ?",
+                icon: "warning",
+                buttons: ["Cancel", "Activate Now"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: url + 'deleteProduct.php',
+                        type: 'POST',
+                        data: { productId: productId },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.Responsecode == 200) {
+                                var updateLable = productList.get(productId);
+                                if (updateLable.isActive === '0') {
+                                    updateLable.isActive = '1';
+                                } else {
+                                    updateLable.isActive = '0';
+                                }
+                                productList.set(productId, updateLable);
+                                showProducts(productList);
+                                swal({
+                                    title: "Deleted",
+                                    text: response.Message,
+                                    icon: "success",
+                                });
+                            }
+                        }
+                    })
+                } else {
+                    swal("The item is not deleted!");
+                }
+            });
     }
 }
 
@@ -132,4 +145,10 @@ function addProduct() {
 function goback() {
     $('#newproduct').empty();
     $('.productlist').show();
+}
+
+function back() {
+    $('#newproduct').empty();
+    $('.productlist').show();
+    showProducts(productList);
 }

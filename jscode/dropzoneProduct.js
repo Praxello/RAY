@@ -12,10 +12,11 @@ $(".dropzone").dropzone({
                     name: value.name,
                     size: value.size
                 };
+                thisDropzone.emit("addedfile", mockFile);
+                thisDropzone.createThumbnailFromUrl(mockFile, "apis/upload/productImages/" + value.name);
+                // thisDropzone.options.addedfile.call(thisDropzone, mockFile);
 
-                thisDropzone.options.addedfile.call(thisDropzone, mockFile);
-
-                thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "apis/upload/" + value.name);
+                // thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "apis/upload/productImages/" + value.name);
 
             });
 

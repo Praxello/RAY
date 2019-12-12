@@ -28,6 +28,7 @@ if(isset($_SESSION['userId'])){
         <link rel="stylesheet" href="plugins/jquery-minicolors/jquery.minicolors.css">
         <link rel="stylesheet" href="plugins/datedropper/datedropper.min.css">
         <link rel="stylesheet" href="dist/css/theme.min.css">
+        <link rel="stylesheet" href="loader.css">
         <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
@@ -101,6 +102,7 @@ if(isset($_SESSION['userId'])){
                                                     <th>Email</th>
                                                     <th>Birth Date</th>
                                                     <th>Contact Address</th>
+                                                    <th>Status</th>
                                                     <th class="nosort">&nbsp;</th>
                                                 </tr>
                                             </thead>
@@ -120,6 +122,7 @@ if(isset($_SESSION['userId'])){
                             </div>
                         </footer> -->
                         <?php include 'footer.php';?>
+                        <div id="loader"></div>
                     </div>
                 </div>
 
@@ -141,9 +144,10 @@ if(isset($_SESSION['userId'])){
                 <script src="plugins/moment/moment.js"></script>
                 <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
                 <script src="plugins/summernote/dist/summernote-bs4.min.js"></script> 
-                <script src="js/layouts.js"></script>
+                <script src="jscode/loader.js"></script>
                 <script src="jscode/apis.js"></script>
                 <script src="jscode/vendors.js"></script> 
+                
 
     </body>
 

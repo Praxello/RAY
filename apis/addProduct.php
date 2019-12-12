@@ -34,7 +34,7 @@ if (isset($_POST['userId']) && isset($_POST['productTitle']) && isset($_POST['pr
             }
         }
         $response = array(
-            'Message' => "Product added Successfully",
+            'Message' => "Product added successfully now you can upload images upto 3",
             "Data" => $records,
             'Responsecode' => 200
         );

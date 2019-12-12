@@ -31,8 +31,10 @@ $('#productform').on('submit', function(e) {
                         timer: 1500
                     });
                     productList.set(response.Data.productId, response.Data);
-                    showProducts(productList);
-                    goback();
+                    $('#productId').val(response.Data.productId);
+                    $('#addProductImages').show();
+                    $('.hideit').hide();
+                    $('.showit').show();
                 } else {
                     swal({
                         position: 'top-end',

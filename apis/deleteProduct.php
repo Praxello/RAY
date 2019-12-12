@@ -9,13 +9,13 @@ extract($_POST);
 
 if (isset($_POST['productId'])) {
     
-    $sql   = "DELETE FROM ProductMaster WHERE productId = $productId";
+    $sql   = "UPDATE ProductMaster SET isActive = CASE isActive WHEN '0' THEN '1' WHEN '1' THEN '0' END WHERE productId = $productId";
     $query = mysqli_query($conn, $sql);
     
     $rowsAffected = mysqli_affected_rows($conn);
     if ($rowsAffected == 1) {
         $response = array(
-            'Message' => "Product Removed Successfully",
+            'Message' => "Product is inactive Successfully",
             "Data" => $records,
             'Responsecode' => 200
         );

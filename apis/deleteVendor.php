@@ -9,13 +9,13 @@ extract($_POST);
 
 if (isset($_POST['vendorId'])) {
     
-    $sql   = "DELETE FROM UserMaster WHERE userId = $vendorId";
+    $sql   = "UPDATE UserMaster SET isActive = CASE isActive WHEN 0 THEN 1 WHEN 1 THEN 0 END WHERE userId = $vendorId";
     $query = mysqli_query($conn, $sql);
     
     $rowsAffected = mysqli_affected_rows($conn);
     if ($rowsAffected == 1) {
         $response = array(
-            'Message' => "Vendor Removed Successfully",
+            'Message' => "Vendor In activated Successfully",
             "Data" => $records,
             'Responsecode' => 200
         );

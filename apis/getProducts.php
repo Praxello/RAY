@@ -6,6 +6,7 @@ mysqli_set_charset($conn, 'utf8');
 $response = null;
 $records  = null;
 extract($_POST);
+$sql = null;
 if(isset($_POST['userId']) && isset($_POST['roleId'])){
     if($roleId==1){
         $sql = "SELECT * FROM ProductMaster";
