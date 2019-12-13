@@ -46,7 +46,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="page-header-title">
                                         <i class="ik file-text ik-file-text bg-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Question List</h5>
+                                            <h5>Questions</h5>
                                             <span>List of Questions</span>
                                         </div>
                                     </div>
@@ -55,12 +55,12 @@ if(isset($_SESSION['userId'])){
                                     <nav class="breadcrumb-container" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="../index.html"><i class="ik ik-home"></i></a>
+                                                <a href="#"><i class="ik ik-home"></i></a>
                                             </li>
                                             <li class="breadcrumb-item">
                                                 <a href="#">Quiz</a>
                                             </li>
-                                            <li class="breadcrumb-item active" aria-current="page">Question List</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Quiz list</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -95,7 +95,7 @@ if(isset($_SESSION['userId'])){
                                             <thead>
                                                 <tr>
                                                     <!-- <th style="width: 40%;">Question</th> -->
-                                                    <th style="width: 40%;">Category</th>
+                                                    <th style="width: 40%;">Category/Brand</th>
                                                     <th style="width: 40%;" class="nosort">Total Questions</th>
                                                     <th style="width: 20%;" class="nosort">&nbsp;</th>
                                                 </tr>

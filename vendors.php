@@ -60,12 +60,12 @@ if(isset($_SESSION['userId'])){
                                     <nav class="breadcrumb-container" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="products.php"><i class="ik ik-home"></i></a>
+                                                <a href="#"><i class="ik ik-home"></i></a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="#">Tables</a>
+                                                <a href="#">Vendors</a>
                                             </li>
-                                            <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Vendor list</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -97,11 +97,11 @@ if(isset($_SESSION['userId'])){
                                         <table  class="table" id="vendors">
                                             <thead>
                                                 <tr>
-                                                    <th>Contact Number</th>
+                                                    <th>Contact number</th>
                                                     <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Birth Date</th>
-                                                    <th>Contact Address</th>
+                                                    <th>Email id</th>
+                                                    <th>Date of birth</th>
+                                                    <th>Address details</th>
                                                     <th>Status</th>
                                                     <th class="nosort">&nbsp;</th>
                                                 </tr>

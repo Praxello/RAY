@@ -44,8 +44,8 @@ const showVendors = vendorsList => {
         tblData += '<td>' + vendors.contactAddress + '</td>';
         tblData += activeLable;
         tblData += '<td><div class="table-actions">';
-        tblData += '<a href="#" onclick="editVendor(' + (k) + ')"><i class="ik ik-edit-2"></i></a>';
-        tblData += '<a href="#" class="list-delete" onclick="removeVendor(' + (k) + ')"><i class="ik ik-trash-2"></i></a>';
+        tblData += '<a href="#" onclick="editVendor(' + (k) + ')" title="Edit vendor details"><i class="ik ik-edit-2"></i></a>';
+        tblData += '<a href="#" class="list-delete" onclick="removeVendor(' + (k) + ')" title="Activate/Inactivate vendor"><i class="ik ik-check-circle"></i></a>';
         tblData += '</div></td></tr>';
     }
     $('.vendorData').html(tblData);
@@ -106,7 +106,7 @@ const removeVendor = vendorId => {
                                 vendorsList.set(vendorId, vendor);
                                 showVendors(vendorsList);
                                 swal({
-                                    title: "Deleted",
+                                    title: "Activated",
                                     text: response.Message,
                                     icon: "success",
                                 });
@@ -114,7 +114,7 @@ const removeVendor = vendorId => {
                         }
                     });
                 } else {
-                    swal("The Vendor is not deleted!");
+                    swal("The vendor is not activated!");
                 }
             });
     }

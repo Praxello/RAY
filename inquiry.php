@@ -51,7 +51,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="page-header-title">
                                         <i class="ik phone-forwarded ik-phone-forwarded bg-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Inquiry List</h5>
+                                            <h5>Inquiry</h5>
                                             <span>customer inquiry of a products</span>
                                         </div>
                                     </div>
@@ -60,12 +60,12 @@ if(isset($_SESSION['userId'])){
                                     <nav class="breadcrumb-container" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="products.php"><i class="ik ik-home"></i></a>
+                                                <a href="#"><i class="ik ik-home"></i></a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="#">Tables</a>
+                                                <a href="#">Inquiry</a>
                                             </li>
-                                            <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Product Inquiry list</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -95,7 +95,7 @@ if(isset($_SESSION['userId'])){
                                             <thead>
                                                 <tr>
                                                 <th class="nosort">Brand</th>
-                                                    <th>Title</th>
+                                                    <th>Brand Title</th>
                                                     <th>Date of Inquiry</th>
                                                     <th>Customer</th>
                                                     <th>Acknoledgement</th>

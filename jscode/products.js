@@ -47,7 +47,7 @@ const showProducts = productList => {
         tblData += activeLable;
         tblData += '<td><div class="table-actions">';
         tblData += editData;
-        tblData += '<a href="#" class="list-delete" onclick="removeProduct(' + (k) + ')" title="Active inactive product"><i class="ik ik-trash-2"></i></a>';
+        tblData += '<a href="#" class="list-delete" onclick="removeProduct(' + (k) + ')" title="Active/Inactive product"><i class="ik ik-check-circle"></i></a>';
         tblData += '</div></td></tr>';
     }
     $('.productsData').html(tblData);
@@ -100,7 +100,7 @@ const removeProduct = productId => {
 
         swal({
                 title: "Are you sure?",
-                text: "Do you really want to Activate ?",
+                text: "Do you really want to Activate?",
                 icon: "warning",
                 buttons: ["Cancel", "Activate Now"],
                 dangerMode: true,
@@ -123,7 +123,7 @@ const removeProduct = productId => {
                                 productList.set(productId, updateLable);
                                 showProducts(productList);
                                 swal({
-                                    title: "Deleted",
+                                    title: "Activated",
                                     text: response.Message,
                                     icon: "success",
                                 });
@@ -131,7 +131,7 @@ const removeProduct = productId => {
                         }
                     })
                 } else {
-                    swal("The item is not deleted!");
+                    swal("The item is not Activated!");
                 }
             });
     }

@@ -15,7 +15,7 @@ if (isset($_POST['vendorId'])) {
     $rowsAffected = mysqli_affected_rows($conn);
     if ($rowsAffected == 1) {
         $response = array(
-            'Message' => "Vendor In activated Successfully",
+            'Message' => "Vendor In activated successfully",
             "Data" => $records,
             'Responsecode' => 200
         );

@@ -1,5 +1,5 @@
 vendorList(vendorsList);
-
+uproductId = 0; //when user click on first time to add a product then there is no product id is set so 0
 $('#productform').on('submit', function(e) {
     e.preventDefault();
     const productDetails = {

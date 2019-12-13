@@ -53,7 +53,7 @@ if(isset($_SESSION['userId'])){
                                     <div class="page-header-title">
                                         <i class="ik shopping-bag ik-shopping-bag bg-blue"></i>
                                         <div class="d-inline">
-                                            <h5>Products List</h5>
+                                            <h5>Products</h5>
                                             <span>List of brands</span>
                                         </div>
                                     </div>
@@ -62,12 +62,12 @@ if(isset($_SESSION['userId'])){
                                     <nav class="breadcrumb-container" aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="products.php"><i class="ik ik-home"></i></a>
+                                                <a href="#"><i class="ik ik-home"></i></a>
                                             </li>
                                             <li class="breadcrumb-item">
-                                                <a href="#">Tables</a>
+                                                <a href="#">Products</a>
                                             </li>
-                                            <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Products list</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -102,11 +102,11 @@ if(isset($_SESSION['userId'])){
                                             <thead>
                                                 <tr>
                                                 <th class="nosort">Brand</th>
-                                                    <th>Title</th>
+                                                    <th>Brand Title</th>
                                                     <th>Price</th>
-                                                    <th>HSN</th>
+                                                    <th>HSN no</th>
                                                     <th>Video URL</th>
-                                                    <th>Details</th>
+                                                    <th>Brand Details</th>
                                                     <th>Status</th>
                                                     <th class="nosort">&nbsp;</th>
                                                 </tr>

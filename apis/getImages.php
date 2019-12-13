@@ -8,8 +8,8 @@ $records     = null;
 $result      = array();
 $storeFolder = 'upload/productImages';
 $ds          = DIRECTORY_SEPARATOR;
-extract($_GET);
-if (isset($_GET['productId'])) {
+extract($_POST);
+if (isset($_POST['productId'])) {
     $academicQuery = mysqli_query($conn, "SELECT imageId FROM ProductImages where productId = $productId");
     if ($academicQuery != null) {
         $academicAffected = mysqli_num_rows($academicQuery);
@@ -36,6 +36,7 @@ if (isset($_GET['productId'])) {
 } else {
     $response = array(
         'Message' => "Parameter Missing",
+        'Data' => $records,
         'Responsecode' => 400
     );
 }

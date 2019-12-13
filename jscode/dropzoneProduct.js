@@ -3,22 +3,21 @@ $(".dropzone").dropzone({
     init: function() {
         thisDropzone = this;
         var link = url + 'getImages.php';
-        $.get('apis/getImages.php', {
+        $.post('apis/getImages.php', {
             productId: uproductId
         }, function(response) {
-            $.each(response.Data, function(key, value) {
+            if (response.Data != null) {
+                $.each(response.Data, function(key, value) {
 
-                var mockFile = {
-                    name: value.name,
-                    size: value.size
-                };
-                thisDropzone.emit("addedfile", mockFile);
-                thisDropzone.createThumbnailFromUrl(mockFile, "apis/upload/productImages/" + value.name);
-                // thisDropzone.options.addedfile.call(thisDropzone, mockFile);
+                    var mockFile = {
+                        name: value.name,
+                        size: value.size
+                    };
+                    thisDropzone.emit("addedfile", mockFile);
+                    thisDropzone.createThumbnailFromUrl(mockFile, "apis/upload/productImages/" + value.name);
 
-                // thisDropzone.options.thumbnail.call(thisDropzone, mockFile, "apis/upload/productImages/" + value.name);
-
-            });
+                });
+            }
 
         });
     },
