@@ -34,6 +34,9 @@
                                  <div class="nav-item active">
                                     <a href="inquiry.php"><i class="ik phone-forwarded ik-phone-forwarded"></i><span>Inquiry</span></a>
                                 </div>
+                                <div class="nav-item active">
+                                    <a href="levelsCategory.php"><i class="ik phone-forwarded ik-phone-forwarded"></i><span>Levels</span></a>
+                                </div>
                                 <?php 
                                 }?>
                                 
