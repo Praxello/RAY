@@ -49,6 +49,7 @@ $('#levelsecondData').on('submit', function(e) {
                 levelsecond.set(response.Data.reportId, response.Data);
                 $('#secondmodal').modal('toggle');
                 showLevelsdata(levelsecond, 2);
+                loadlevelthirdCategory(levelsecond);
             } else {
                 swal({
                     position: 'top-end',

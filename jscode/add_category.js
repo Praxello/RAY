@@ -28,7 +28,9 @@ $('#categoryform').on('submit', function(e) {
                     timer: 1500
                 });
                 categoryList.set(response.Data.reportId, response.Data);
+                $('#categoryform')[0].reset();
                 $('#categoryModal').modal('toggle');
+                loadleveloneCategory(categoryList);
                 showCategories(categoryList);
             } else {
                 swal({

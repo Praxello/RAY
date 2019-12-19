@@ -46,6 +46,7 @@ $(document).on("submit", "#leveloneData", function(e) {
                 $('#leveloneData')[0].reset();
                 $('#demoModal').modal('toggle');
                 showLevelsdata(levelone, 1);
+                loadlevelsecondCategory(levelone);
             } else {
                 swal({
                     position: 'top-end',

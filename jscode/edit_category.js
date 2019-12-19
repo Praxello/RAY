@@ -21,6 +21,7 @@ $('#ecategoryform').on('submit', function(e) {
                 });
                 categoryList.set(response.Data.reportId, response.Data);
                 $('#ecategoryModal').modal('toggle');
+                $('#ecategoryform')[0].reset();
                 showCategories(categoryList);
             } else {
                 swal({
