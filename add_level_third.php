@@ -34,7 +34,10 @@
                     </div>
                     <div class="row">
                     <div class="col-md-4">
-                            
+                    <div class="form-group">
+                            <label for="l3details">Details</label>
+                            <textarea class="form-control" id="l3details" name="l3details" rows="2"></textarea>
+                        </div>
                         </div>
                     <div class="col-md-4">
                         <div class="form-group">

@@ -104,11 +104,11 @@ const showLevelsdata = (levelsdata, level) => {
     for (let k of levelsdata.keys()) {
         let levels = levelsdata.get(k);
         if (level == '1') {
-            action = '<td><a href="#!" onclick="editlevelonedata(' + k + ')"><i class="ik ik-edit f-16 mr-15 text-green"></i></a></td></tr>';
+            action = '<td><a href="#!" onclick="editlevelonedata(' + k + ')"><i class="ik ik-edit f-16 mr-15 text-green"></i></a><a href="#!" class="list-delete" onclick="removeLevelone(' + (k) + ')"><i class="ik ik-trash-2 f-16 text-red"></i></a></td></tr>';
         } else if (level == '2') {
-            action = '<td><a href="#!" onclick="editlevelseconddata(' + k + ')"><i class="ik ik-edit f-16 mr-15 text-green"></i></a></td></tr>';
+            action = '<td><a href="#!" onclick="editlevelseconddata(' + k + ')"><i class="ik ik-edit f-16 mr-15 text-green"></i></a><a href="#!" class="list-delete" onclick="removeLevel2(' + (k) + ')"><i class="ik ik-trash-2 f-16 text-red"></i></a></td></tr>';
         } else if (level == '3') {
-            action = '<td><a href="#!" onclick="editlevelthirddata(' + k + ')"><i class="ik ik-edit f-16 mr-15 text-green"></i></a></td></tr>';
+            action = '<td><a href="#!" onclick="editlevelthirddata(' + k + ')"><i class="ik ik-edit f-16 mr-15 text-green"></i></a><a href="#!" class="list-delete" onclick="removeLevel3(' + (k) + ')"><i class="ik ik-trash-2 f-16 text-red"></i></a></td></tr>';
         }
         tblData += '<tr><td>' + levels.mtitle + '</td>';
         tblData += '<td>' + levels.title + '</td>';
@@ -127,3 +127,127 @@ loadCategory();
 Level_one();
 Level_second();
 Level_third();
+
+const removeLevelone = reportId => {
+    reportId = reportId.toString();
+    if (levelone.has(reportId)) {
+        var listDelete = $('.list-delete');
+
+        swal({
+                title: "Are you sure?",
+                text: "Do you really want to remove then next level data is also deleted?",
+                icon: "warning",
+                buttons: ["Cancel", "Delete Now"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: url + 'removeLevelone.php',
+                        type: 'POST',
+                        data: { reportId: reportId, table: 'reports_level1' },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.Responsecode == 200) {
+                                levelone.delete(reportId);
+                                showLevelsdata(levelone, 1);
+                                swal({
+                                    title: "Deleted",
+                                    text: response.Message,
+                                    icon: "success",
+                                });
+                            }
+                        }
+                    })
+                } else {
+                    swal({
+                        title: "Safe",
+                        text: "Data Not removed",
+                        icon: "warning",
+                    });
+                }
+            });
+    }
+}
+const removeLevel2 = reportId => {
+    reportId = reportId.toString();
+    if (levelsecond.has(reportId)) {
+        var listDelete = $('.list-delete');
+
+        swal({
+                title: "Are you sure?",
+                text: "Do you really want to remove then next level data is also deleted?",
+                icon: "warning",
+                buttons: ["Cancel", "Delete Now"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: url + 'removeLevelone.php',
+                        type: 'POST',
+                        data: { reportId: reportId, table: 'reports_level2' },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.Responsecode == 200) {
+                                levelsecond.delete(reportId);
+                                showLevelsdata(levelsecond, 2);
+                                swal({
+                                    title: "Deleted",
+                                    text: response.Message,
+                                    icon: "success",
+                                });
+                            }
+                        }
+                    })
+                } else {
+                    swal({
+                        title: "Safe",
+                        text: "Data Not removed",
+                        icon: "warning",
+                    });
+                }
+            });
+    }
+}
+const removeLevel3 = reportId => {
+    reportId = reportId.toString();
+    if (levelthird.has(reportId)) {
+        var listDelete = $('.list-delete');
+
+        swal({
+                title: "Are you sure?",
+                text: "Do you really want to remove then next level data is also deleted?",
+                icon: "warning",
+                buttons: ["Cancel", "Delete Now"],
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        url: url + 'removeLevelone.php',
+                        type: 'POST',
+                        data: { reportId: reportId, table: 'reports_level3' },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.Responsecode == 200) {
+                                levelthird.delete(reportId);
+                                showLevelsdata(levelthird, 3);
+                                swal({
+                                    title: "Deleted",
+                                    text: response.Message,
+                                    icon: "success",
+                                });
+                            }
+                        }
+                    })
+                } else {
+                    swal({
+                        title: "Safe",
+                        text: "Data Not removed",
+                        icon: "warning",
+                    });
+                }
+            });
+    }
+}

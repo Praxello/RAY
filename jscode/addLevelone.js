@@ -15,11 +15,11 @@ function editlevelonedata(reportId) {
     var reportId = reportId.toString();
     var reports = levelone.get(reportId);
     reportId_levelone = reportId;
-    console.log(reports);
+    $('#el1details').val(reports.details);
     $('#edittitle').val(reports.mtitle);
     $('#eparentIdlevelone').val(reports.sreportId).trigger('change');
     var src = dir + reportId + ".jpg";
-    console.log(src);
+    console.log(reports);
     $('#editleveloneoutput').attr("src", src);
     $('#editdemoModal').modal('toggle');
 }

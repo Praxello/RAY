@@ -24,6 +24,7 @@ if(isset($_SESSION['userId'])){
         <link rel="stylesheet" href="plugins/icon-kit/dist/css/iconkit.min.css">
         <link rel="stylesheet" href="plugins/perfect-scrollbar/css/perfect-scrollbar.css">
         <link rel="stylesheet" href="dist/css/theme.min.css">
+        <link rel="stylesheet" href="loader.css">
         <script src="src/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
@@ -407,7 +408,7 @@ if(isset($_SESSION['userId'])){
                 </div>
             </div>
         </div>
-
+        <div id="loader"></div>
      
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
        
@@ -421,6 +422,7 @@ if(isset($_SESSION['userId'])){
         <script src="dist/js/theme.min.js"></script>
         <script src="plugins/sweetalert/dist/sweetalert.min.js"></script>
         <script src="jscode/apis.js"></script>
+        <script src="jscode/loader.js"></script>
         <script src="jscode/levels.js"></script>
         <script src="jscode/loadFile.js"></script>
         <?php include 'add_category.php';?>

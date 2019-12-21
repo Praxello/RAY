@@ -19,11 +19,10 @@ function editlevelthirddata(reportId) {
     var reportId = reportId.toString();
     var reports = levelthird.get(reportId);
     reportId_levelthird = reportId;
-    console.log(reports);
+    $('#el3details').val(reports.details);
     $('#etitle').val(reports.mtitle);
     $('#elevelthirdparent').val(reports.sreportId).trigger('change');
     var src = tdir + reportId + ".jpg";
-    console.log(src);
     $('#etoutput3').attr("src", src);
     $('#ethirdmodal').modal('toggle');
 }

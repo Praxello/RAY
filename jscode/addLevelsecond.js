@@ -19,11 +19,10 @@ function editlevelseconddata(reportId) {
     var reportId = reportId.toString();
     var reports = levelsecond.get(reportId);
     reportId_levelsecond = reportId;
-    console.log(reports);
+    $('#el2details').val(reports.details);
     $('#estitle').val(reports.mtitle);
     $('#essecondLevel').val(reports.sreportId).trigger('change');
     var src = sdir + reportId + ".jpg";
-    console.log(src);
     $('#esoutput').attr("src", src);
     $('#esecondmodal').modal('toggle');
 }
