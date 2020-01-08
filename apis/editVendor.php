@@ -7,7 +7,7 @@ $response = null;
 $records  = null;
 extract($_POST);
 $roleId = 2;
-if (isset($_POST['userId']) && isset($_POST['contactNumber']) && isset($_POST['emailId']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['contactAddress'])) {
+if (isset($_POST['userId']) && isset($_POST['contactNumber']) && isset($_POST['emailId']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['contactAddress']) && isset($_POST['password'])) {
     
     $mname     = isset($_POST['mname']) ? $_POST['mname'] : 'NULL';
     $pincode   = isset($_POST['pincode']) ? $_POST['pincode'] : 'NULL';
@@ -20,7 +20,7 @@ if (isset($_POST['userId']) && isset($_POST['contactNumber']) && isset($_POST['e
     $mname          = mysqli_real_escape_string($conn, $mname);
     
     $sql   = "UPDATE UserMaster um,UserDetails ud SET um.contactNumber = '$contactNumber',um.emailId = '$emailId',ud.fname ='$fname',ud.lname='$lname',ud.mname = '$mname',
-             ud.contactAddress = '$contactAddress',ud.pincode = '$pincode',ud.birthDate = '$birthDate',ud.landline = '$landline' WHERE
+             ud.contactAddress = '$contactAddress',ud.pincode = '$pincode',ud.birthDate = '$birthDate',ud.landline = '$landline',upassword = '$password' WHERE
              um.userId = ud.userId AND um.userId = $userId";
     $query = mysqli_query($conn, $sql);
     

@@ -10,6 +10,9 @@ $(function() {
                     required: true,
                     maxlength: 50
                 },
+                password: {
+                    required: true
+                },
                 contactNumber: {
                     required: true,
                     number: true,
@@ -33,6 +36,9 @@ $(function() {
                 lname: {
                     required: "Please enter Last name",
                     maxlength: "Length Exceed upto 50 characters"
+                },
+                password: {
+                    required: "Please enter Password",
                 },
                 contactNumber: {
                     required: "Please enter mobile number",

@@ -18,7 +18,7 @@ const Level_one = () => {
             }
         }
     });
-}
+};
 const Level_second = () => {
     $.ajax({
         url: url + 'getLevelsecond.php',
@@ -35,7 +35,7 @@ const Level_second = () => {
             }
         }
     });
-}
+};
 const Level_third = () => {
     $.ajax({
         url: url + 'getLevelthird.php',
@@ -51,7 +51,7 @@ const Level_third = () => {
             }
         }
     });
-}
+};
 
 const loadCategory = () => {
     $.ajax({
@@ -70,7 +70,7 @@ const loadCategory = () => {
             }
         }
     });
-}
+};
 
 const showCategories = categoryList => {
     $('#categories').empty();
@@ -86,7 +86,7 @@ const showCategories = categoryList => {
         i++;
     }
     $('#categories').html(tblData);
-}
+};
 const showLevelsdata = (levelsdata, level) => {
     var src = "";
     if (level == 1) {
@@ -122,7 +122,7 @@ const showLevelsdata = (levelsdata, level) => {
     } else if (level == 3) {
         $('#levelthird').html(tblData);
     }
-}
+};
 loadCategory();
 Level_one();
 Level_second();
@@ -158,7 +158,7 @@ const removeLevelone = reportId => {
                                 });
                             }
                         }
-                    })
+                    });
                 } else {
                     swal({
                         title: "Safe",
@@ -168,7 +168,7 @@ const removeLevelone = reportId => {
                 }
             });
     }
-}
+};
 const removeLevel2 = reportId => {
     reportId = reportId.toString();
     if (levelsecond.has(reportId)) {
@@ -199,7 +199,7 @@ const removeLevel2 = reportId => {
                                 });
                             }
                         }
-                    })
+                    });
                 } else {
                     swal({
                         title: "Safe",
@@ -209,7 +209,7 @@ const removeLevel2 = reportId => {
                 }
             });
     }
-}
+};
 const removeLevel3 = reportId => {
     reportId = reportId.toString();
     if (levelthird.has(reportId)) {
@@ -240,7 +240,7 @@ const removeLevel3 = reportId => {
                                 });
                             }
                         }
-                    })
+                    });
                 } else {
                     swal({
                         title: "Safe",
@@ -250,4 +250,4 @@ const removeLevel3 = reportId => {
                 }
             });
     }
-}
+};

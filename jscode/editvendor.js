@@ -8,6 +8,7 @@ function loadDetails(vendor) {
     $('#contactAddress').val(vendor.contactAddress);
     $('#pincode').val(vendor.pincode);
     $('#landline').val(vendor.landline);
+    $('#password').val(vendor.upassword);
 }
 loadDetails(details);
 $('#vendorForm').on('submit', function(e) {
@@ -22,7 +23,8 @@ $('#vendorForm').on('submit', function(e) {
         contactAddress: $('#contactAddress').val(),
         pincode: $('#pincode').val(),
         landline: $('#landline').val(),
-        birthDate: moment($('#dropper-max-year').val()).format('YYYY-MM-DD')
+        birthDate: moment($('#dropper-max-year').val()).format('YYYY-MM-DD'),
+        password: $('#password').val()
     };
     var returnVal = $("#vendorForm").valid();
     if (returnVal) {

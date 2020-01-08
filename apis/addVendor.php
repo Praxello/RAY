@@ -7,19 +7,18 @@ $response = null;
 $records  = null;
 extract($_POST);
 $roleId = 2;
-if (isset($_POST['contactNumber']) && isset($_POST['emailId'])  && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['contactAddress'])) {
+if (isset($_POST['contactNumber']) && isset($_POST['emailId'])  && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['contactAddress']) && isset($_POST['password'])) {
     
     $mname     = isset($_POST['mname']) ? $_POST['mname'] : 'NULL';
     $pincode   = isset($_POST['pincode']) ? $_POST['pincode'] : 'NULL';
     $birthDate = isset($_POST['birthDate']) ? $_POST['birthDate'] : 'NULL';
     $landline  = isset($_POST['landline']) ? $_POST['landline'] : 'NULL';
-    $upassword = '12345';
     $Contactaddress = mysqli_real_escape_string($conn, $contactAddress);
     $fname          = mysqli_real_escape_string($conn, $fname);
     $lname          = mysqli_real_escape_string($conn, $lname);
     $mname          = mysqli_real_escape_string($conn, $mname);
     
-    $sql   = "INSERT INTO  UserMaster(roleId,contactNumber,emailId,upassword) VALUES($roleId,'$contactNumber','$emailId','$upassword')";
+    $sql   = "INSERT INTO  UserMaster(roleId,contactNumber,emailId,upassword) VALUES($roleId,'$contactNumber','$emailId','$password')";
     $query = mysqli_query($conn, $sql);
     
     $rowsAffected = mysqli_affected_rows($conn);

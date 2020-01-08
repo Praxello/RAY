@@ -9,6 +9,7 @@ $('#vendorForm').on('submit', function(e) {
         contactAddress: $('#contactAddress').val(),
         pincode: $('#pincode').val(),
         landline: $('#landline').val(),
+        password: $('#password').val(),
         birthDate: moment($('#dropper-max-year').val()).format('YYYY-MM-DD')
     };
     var returnVal = $("#vendorForm").valid();

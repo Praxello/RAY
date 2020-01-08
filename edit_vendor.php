@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="exampleTextarea">Address</label>
                             <textarea class="form-control" id="contactAddress" rows="3"></textarea>
@@ -78,6 +78,13 @@
                         <div class="form-group">
                             <label for="exampleSelectLandline">Landline No.</label>
                             <input type="Landline" class="form-control" id="landline" placeholder="Landline">
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="exampleSelectLandline">Password.</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 
                         </div>
                     </div>
